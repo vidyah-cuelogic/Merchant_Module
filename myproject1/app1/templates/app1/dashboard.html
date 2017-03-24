@@ -1,0 +1,92 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% load static %}
+{% block content %}
+
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/css/style.css' %}">
+
+  <script type="text/javascript" src="{% static 'app1/js/form_validation.js' %}"></script>
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
+  
+  <title>Users dashboard</title>
+  
+</head>
+<body>
+    <div class="container-fluid" style="padding-left: 0px; margin-left: 0px;">
+    <div class="row" >
+
+          <div class="col-md-2 ">
+          
+          <img src="{% static 'app1/images/logo.png' %}" class="img-fluid" alt="logo" style="max-width: 100%;height: auto; "></div>
+           <div class="col-md-10 " style="background-color:blue; height: 55px; padding-top: 0.4%;">
+              <a href="login"><button type="button" class="btn  pull-right btn-lg ">Log Out</button>
+              </a>  
+
+           </div>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-md-2 " style="background-color:blue; height:100%;  ">
+        <ul class="nav nav-pills nav-stacked">
+          <li ><a href=""><button type="button" class="btn btn-lg ">
+          {% bootstrap_icon "home" %}    home</button></a></li>
+          <li ><a href="">  <button type="button" class="btn btn-lg disabled">{% bootstrap_icon "cloud" %}   products</button></a></li>
+          <li ><a href="">  <button type="button" class="btn btn-lg disabled ">{% bootstrap_icon "gift" %}   offers</button></a></li>
+           <li > <a href=""><button type="button" class="btn btn-lg disabled">{% bootstrap_icon "stats" %}
+              reports   {% bootstrap_icon "chevron-down" %}</button></a>
+            <ul style="list-style-type:none;">
+              <li><a href="#"><button type="button" class="btn btn-lg disabled"> products</button></a></li><br>
+              <li><a href="#"><button type="button" class="btn btn-lg disabled">trend</button></a></li>
+            </ul>
+          </li> 
+          <li ><a href="">  <button type="button" class="btn btn-lg disabled">{% bootstrap_icon "cog" %}   settings</button></a></li>
+          </ul>
+      </div>
+      <div class="col-md-3" style="height:100%; padding: 4%; ">
+        <div class="panel panel-default" style="height: 15%; padding:5%; background-color: orange;">
+          <div class="panel-body">{% bootstrap_icon "cloud" %} <br> 100 products  </div>
+        </div>
+        <div class="panel panel-default" style="height: 15%; padding:5%; background-color: lightblue;">
+          <div class="panel-body">{% bootstrap_icon "gift" %} <br> 50 offers  </div>
+        </div>
+        <div class="panel panel-default" style="height: 15%; padding:5%; background-color: lightgreen;">
+          <div class="panel-body">{% bootstrap_icon "hand-right" %} <br> xyz products  </div>
+        </div>
+        <div class="panel panel-default" style="height: 15%; padding:5%; background-color: red;">
+          <div class="panel-body">{% bootstrap_icon "hand-right" %} <br> xyz category  </div>
+        </div>
+      </div>
+
+      <div class="col-md-7" style="height:100%; padding: 3%;">
+        <div class="panel panel-default">
+          <!-- Default panel contents -->
+          <div class="panel-heading">Activities</div>
+          <ul class="list-group">
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item">xyz product added</li>
+    <li class="list-group-item"><a href="">load more</li>
+  </ul>
+
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
+{% endblock %}

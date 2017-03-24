@@ -1,0 +1,32 @@
+body
+{
+    background-image: url("/static/app1/images/images.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}
+.logo{
+    max-width: 100%;
+}
+
+
+h1.title { 
+    font-size: 40px;
+    color: red;
+    
+    font-weight: 300; 
+}
+
+hr{
+    width: 100%;
+    color: gray;
+}
+
+
+.input-group input 
+{
+    height: 45px;
+    margin:0px;
+    padding: 0px;
+}
+
