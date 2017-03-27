@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db1',
-        'USER': 'myprojectuser',
+        'USER': 'myprojectuser_v',
         'PASSWORD': 'root123',
         'HOST': 'localhost',
         'PORT': '',

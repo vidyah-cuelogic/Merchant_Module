@@ -1,6 +1,6 @@
 body
 {
-    background-image: url("/static/app1/images/images.jpg");
+    background-image: url("/static/app1/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 20px;
@@ -8,8 +8,15 @@ body
 .logo{
     max-width: 100%;
 }
-
-
+.boy{
+    max-width: 100%;
+}
+.down{
+    margin-top:15%;
+}
+.center{
+    margin-top: 25%;
+}
 h1.title { 
     font-size: 40px;
     color: red;
@@ -28,5 +35,10 @@ hr{
     height: 45px;
     margin:0px;
     padding: 0px;
+}
+.input-group span
+{
+    width: 35px;
+
 }
 
