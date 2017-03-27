@@ -1,0 +1,39 @@
+body
+{
+    background-image: url("/static/app1/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   
+}
+nav {
+  
+  background-color: #56776A;
+
+}
+.logo{
+  width: 172px;
+  height: 46px;
+    /*max-width: 100%;*/
+}
+.container 
+{
+	
+	background-color:white;
+	/*opacity: 0.5;
+	filter: alpha(opacity=50); */
+	border: 2px solid green;
+	max-width:40%; 
+	padding:20px 30px 20px 40px;
+}
+.input-group input 
+{
+    height: 40px;
+    margin:0px;
+    padding: 0px;
+}
+.input-group span
+{
+    width: 30px;
+
+}

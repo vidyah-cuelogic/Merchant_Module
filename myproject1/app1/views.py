@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def home(request):
-    return render(request,"app1/home.html",{})
+    return render(request,"app1/dashboard.html",{})
 
     
 def login(request):
@@ -43,3 +43,6 @@ def register(request):
         return render(request, 'app1/register.html', {
             'form': form
             })
+
+def product(request):
+    return render(request,"app1/product.html",{})

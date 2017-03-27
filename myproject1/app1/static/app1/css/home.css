@@ -1,0 +1,41 @@
+body
+{
+    background-image: url("/static/app1/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    color: white;
+}
+button
+{
+	color:#d5e8e0;
+	background-color:#32463f;
+	
+}
+button:hover{
+	color: #ffffff;
+	background-color:#111815;  
+}
+.logo{
+  width: 172px;
+  height: 46px;
+    /*max-width: 100%;*/
+}
+.boy{
+    max-width: 100%;
+}
+.down{
+    margin-top:10%;
+}
+.center{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.title
+{
+  font-family:  "Lucida Grande"/*"Source Sans Pro", "Helvetica Neue", "Lucida Grande", sans-serif*/;
+  padding-left: 10%;
+
+}
