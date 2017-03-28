@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 
 EMAIL_USE_TLS=True
 EMAIL_HOST="smtp.gmail.com"
-EMAIL_HOST_USER='vidyahulwan95@gmail.com'
-EMAIL_HOST_PASSWORD='hulwan95'
+EMAIL_HOST_USER='vidya.hulwan@cuelogic.com'
+EMAIL_HOST_PASSWORD='Cuelogic'
 EMAIL_PORT=587
 # Application definition
 
@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db1',
-        'USER': 'myprojectuser',
+        'USER': 'myprojectuser_v',
         'PASSWORD': 'root123',
         'HOST': 'localhost',
         'PORT': '',
