@@ -47,7 +47,7 @@ margin-top: 10px;
         position: fixed;
         top: 50px;
         left: 225px;
-        width: 225px;
+        width: 200px;
         margin-left: -225px;
         
         border-radius: 0;
@@ -68,6 +68,8 @@ margin-top: 10px;
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
+        color:#32463f;
+        background-color: white;
         
     }
 }

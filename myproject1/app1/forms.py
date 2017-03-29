@@ -17,12 +17,8 @@ class ContactForm(forms.Form):
     
     def clean(self):
         super(ContactForm, self).clean()
-        first_name= self.cleaned_data.get('first_name')
-        last_name= self.cleaned_data.get('last_name')
         email = self.cleaned_data.get('email')
-        email1 = self.cleaned_data.get('email1')
-        pass1 = self.cleaned_data.get('password')
-        pass2 = self.cleaned_data.get('password1')
+        
         
             
         if User.objects.filter(email=email).exists():            
