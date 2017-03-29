@@ -3,10 +3,10 @@ body
     background-image: url("/static/app1/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-size: 20px;
-    color: white;
+    /*font-size: 20px;
+    color: white;*/
 }
-button
+/*button
 {
 	color:#d5e8e0;
 	background-color:#32463f;
@@ -20,7 +20,7 @@ button:hover{
   width: 172px;
   height: 46px;
     /*max-width: 100%;*/
-}
+}/*
 .boy{
     max-width: 100%;
 }
@@ -36,6 +36,6 @@ button:hover{
 .title
 {
   font-family:  "Lucida Grande"/*"Source Sans Pro", "Helvetica Neue", "Lucida Grande", sans-serif*/;
-  padding-left: 10%;
+  /*padding-left: 10%;*/
 
-}
+/*}*/
