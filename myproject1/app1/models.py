@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime
 
 class Merchants(models.Model):
 
@@ -15,12 +16,6 @@ class Merchants(models.Model):
                                         choices = SUBSCRIPTION_TYPE_CHOICE,
                                         default='Trial')
 
-
-from datetime import datetime
-
-# Create your models here.
-
- 
 class emailverify(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     activation_key = models.CharField(max_length=50)

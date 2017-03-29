@@ -12,7 +12,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap-theme.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}">
  
- <link rel="stylesheet" type="text/css" href="{% static 'app1/css/login.css' %}">
+
+ <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base.css' %}">
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
@@ -26,55 +27,52 @@
 </head>
 <body>
 
-          <nav class="navbar ">
+      <nav class="navbar ">
           <div class="container-fluid">
              <div class="navbar-header navbar-left">
-                <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
              </div>
              <div class="navbar-header navbar-right">        
-                <a href="/app1/register/"><button type="button" class="center btn  pull-right btn-lg">Sign Up</button></a>
+                <a href="login"><button type="button" class="center btn  pull-right btn-lg">Log In</button></a>
              </div>
           </div>
-          </nav>   
+       </nav>   
          
 
     <div class="container">
-      {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-          <li class="{{ message.tags }}">{{ message }}</li>
-      {% endfor %}
-    </ul>
-      {% endif %}
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
 
-      
-      {% if form.non_field_errors %}
-          {% for error in form.non_field_errors %}
-            <div class="alert alert-danger">
-               <strong>{{ error|escape }}</strong>
-            </div>
-          {% endfor %}
-        {% endif %}
-     <form class="form-horizontal" method="post" action="/app1/login/" >         
-           
-            {%csrf_token%}
+          {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+          {% endif %}
 
-
+      <div class="row">
+          <div class="col-md-5 col-md-offset-4 box1" >       
+            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
+             {%csrf_token%}
           
-        <div class="panel-title ">
-          <h1 >Log In to QuickBiz</h1>
-          <hr/>
-        </div>
+              <div class="panel-title ">
+                <h1 >Log In to QuickBiz!!</h1>
+                <hr/>
+              </div>
     
  
-            <div class="form-group">
-              {{ form.username.label_tag }}
-              <div class="cols-md-10">
-                <div class="input-group">
-                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user">
-                  </span></span>
-                  {{form.username}}                      
-                </div>
+              <div class="form-group">
+                  {{ form.username.label_tag }}
+                  <div class="input-group">
+                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user"> </span></span>
+                    {{form.username}}                      
+                  </div>
 
                   {% if form.username.errors %}
                     {% for error in form.username.errors %}
@@ -82,34 +80,31 @@
                     {% endfor %}
                   {% endif %}
               </div>
-            </div>
             
-            <div class="form-group">
-              {{ form.password.label_tag }}
-              <div class="cols-md-10">
-                <div class="input-group">
-                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock">
-                  </span></span>
-                  {{form.password}}                      
-                </div>
-              </div>
-            </div>       
+              <div class="form-group">
+                  {{ form.password.label_tag }}
+                    <div class="input-group">
+                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock"> </span></span>
+                    {{form.password}}                      
+                  </div>
+              </div>       
         
              <a href="">I Forget. Help!</a>
-            <hr>
+             <hr>
+             
              <input type="submit" class="btn btn-warning pull-right btn-lg" value="login"  />
-            
-            <!-- <button type="button" class="center btn  pull-right btn-lg">Log In</button> -->
-    </form>
-</div>
+            </form>
+          </div>
+      </div>
   </div>
-  <footer class=" navbar page-footer">
-       <div class="footer-copyright">
-        <div class="container-fluid">
-            © 2015 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
 
-        </div>
-    </div>
-  </footer>
+    <nav class="navbar ">
+          <div class="container-fluid">
+             <div class="navbar-header navbar-left">
+                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+             </div>
+          </div>
+    </nav> 
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 @media(min-width:768px) {
     body {
         margin-top: 50px;
@@ -53,7 +52,12 @@ ul
     background-color: white;        
 }
 }
-
+@media(min-width:768px) {
+section
+{
+    padding-left:220px;      
+}
+}
 #demo>li>a
 {
     
@@ -66,58 +70,8 @@ ul
     color:#32463f;
     background-color: white;        
 }
-
-@media(min-width:768px) {
-section
-{
-    padding-left:220px;
-    padding-top:50px;    
-}
-}
-
-.panel
-{
-    width: 100%;
-    height: 100px;
-}
-.panel span {
-    
-    padding-top: 10%;
-    padding-left: 40%;
-    
-}
-.panel p{
-    font-size:20px;
-    padding-left: 30%;
-
-}
-.first
-{   
-    background-color: lightblue;
-}
-.second
-{
-    
-    background-color: lightpink;
-}
-.third
-{
-
-    background-color: lightgreen;
-}
-
-.fourth
-{
-    
-    background-color: lightgray;
-}
-.panel .glyphicon {
-    font-size: 30px;
-}
 ul .dropdown-menu {
        
     background-color: #32463f;
 }
-
-
 

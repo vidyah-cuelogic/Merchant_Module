@@ -1,0 +1,47 @@
+body
+{
+    background-image: url("/static/app1/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;    
+    color: white;
+}
+button
+{
+	color: white;
+	background-color:#32463f;
+ 	
+}
+button:hover{
+	
+	background-color:#111815; 
+  border: 2px solid black; 
+}
+.logo{
+  width: 172px;
+  height: 46px;
+   
+}
+nav {
+  
+  background-color: rgba(0,0,0,0.1);
+
+}
+
+.box1
+{
+  border:2px solid green; 
+  padding:3%;
+  background-color: rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.input-group input 
+{
+    height: 40px;
+     
+}
+.input-group span
+{
+    width: 40px;
+
+}
