@@ -1,0 +1,121 @@
+
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap-theme.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}">
+ 
+
+ <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base.css' %}">
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+
+<script type="text/javascript" src="{% static 'app1/js/form_validation.js' %}"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+  <style type="text/css">
+    img
+    {
+      width: 100px;
+    }
+  </style>
+
+  
+  <title> Login page</title>
+</head>
+<body>
+     
+    <div class="container">
+    	<h1>Image Uploader</h1>
+		<input type="file" name="images[]" id="images" multiple>
+    <hr>
+    <div id="image_to_upload">
+        
+     
+    </div>
+    </div>
+
+  <script >
+  $(function(){
+    $("#images").change(loadPreviews_click);
+})
+
+function loadPreviews_click(e) {
+    $("#images").each(function() {
+        var $input = $(this);
+        var inputFiles = this.files;
+        if(inputFiles == undefined || inputFiles.length == 0) return;
+        var inputFile = inputFiles[0];
+
+        var reader = new FileReader();
+        reader.readAsDataURL(inputFile);
+        reader.onload= function(e){
+
+        var template='<form action="/upload">'+
+        '<img  src="'+e.target.result+'">'+ 
+       '</form>';
+         $('#image_to_upload').append(template);
+
+           };
+        // reader.onload = function(event) {
+        //     $input.next().attr("src", event.target.result);
+        // };
+        reader.onerror = function(event) {
+            alert("I AM ERROR: " + event.target.error.code);
+        };
+        
+    });
+}
+
+//     $(function(){
+//     $(".image").change(showPreviewImage_click);
+// })
+
+// function showPreviewImage_click(e) {
+//     var $input = $(this);
+//     var inputFiles = this.files;
+//     if(inputFiles == undefined || inputFiles.length == 0) return;
+//     var inputFile = inputFiles[0];
+
+//     var reader = new FileReader();
+//     reader.onload = function(event) {
+//         $input.next().attr("src", event.target.result);
+//     };
+//     reader.onerror = function(event) {
+//         alert("I AM ERROR: " + event.target.error.code);
+//     };
+//     reader.readAsDataURL(inputFile);
+// }
+
+    // $('#images').on('change',function(e){
+      
+
+    //   var files=e.target.files;
+
+
+
+    //   $.each(files,funtion(i,file){
+    //       var reader = new FileReader();
+    //       reader.readAsDataURL(file);
+    //       reader.onload= function(e){
+
+    //         var template='<form action="/upload">'+
+    //     '<img  src="'+e.target.result+'">'+ 
+    //   '</form>';
+    //     $('#image_to_upload').append(template);
+
+    //       };
+    //   });
+
+    // });
+  </script>
+</body>
+</html>

@@ -1,77 +1,8 @@
-
-@media(min-width:768px) {
-    body {
-        margin-top: 50px;
-    }
-}
-body {
-    background-image: url("/static/app1/images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-
-}
-.logo{
-  width: 172px;
-  height: 46px;
-   
-}
-nav {
-  
-  background-color: #32463f;
-
-}
-ul
-{
-    list-style-type:none;
-}
-.navbar ul li a
-{
-    
-    color: white;
-    font-size: 20px;
-}
-@media(min-width:768px) {
-    .side-nav {
-        position: fixed;
-        top: 50px;        
-        width: 200px;        
-        background-color: #32463f;
-        bottom: 0;
-        
-        
-    }
-.side-nav>li>a 
-{
-    width: 200px;
-    color:white;
-    font-size: 20px;
-}
-.side-nav li a:hover,
-.side-nav li a:focus 
-{
-    color:#32463f;
-    background-color: white;        
-}
-}
-
-#demo>li>a
-{
-    
-    color:white;
-    font-size: 20px;
-}
-#demo li a:hover,
-#demo li a:focus 
-{
-    color:#32463f;
-    background-color: white;        
-}
-
 @media(min-width:768px) {
 section
 {
-    padding-left:220px;
-    padding-top:50px;    
+    padding-top:50px; 
+
 }
 }
 
@@ -114,10 +45,5 @@ section
 .panel .glyphicon {
     font-size: 30px;
 }
-ul .dropdown-menu {
-       
-    background-color: #32463f;
-}
-
 
 

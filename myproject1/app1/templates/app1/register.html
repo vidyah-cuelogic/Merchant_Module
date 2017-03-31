@@ -16,7 +16,7 @@
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
-<script type="text/javascript" src="{% static 'app1/js/form_validation.js' %}"></script>
+<script type="text/javascript" src="{% static 'app1/js/reg_validation.js' %}"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
   
 
@@ -41,11 +41,11 @@
               {% endfor %}
             {% endif %}
         <div class="row">
-          <div class="col-md-5 col-md-offset-4 box1" >       
+          <div class="col-md-4 col-md-offset-4 box1" >       
             <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
              {%csrf_token%}
           
-              <div class="panel-title ">
+              <div class="panel-title text-center ">
                 <h1 >User Info</h1>
                 <hr/>
               </div>    
@@ -123,12 +123,13 @@
                 </div>
             </div>
             <hr/>
-         
-            <input type="checkbox" required="True" > I agree to QuickBiz's <a href="">Terms of Use and Privacy Policy</a>
+          <div class="form-group">
+            <p class="text-center"><input type="checkbox"  name="terms" required/> I accept the <u>Terms and Conditions</u></p>
+            </div>
             <hr/>
             
             <div class="form-group">
-                <label class="control-label">Enter text given below.Can't read the text? <a href="">Try different text</a></label><br><br>
+                
               {{form.captcha}}
               {% if form.captcha.errors %}
                     {% for error in form.captcha.errors %}
@@ -136,20 +137,20 @@
                     {% endfor %}
                   {% endif %}                         
             </div>          
-            <input type="submit" class="btn btn-warning pull-right btn-lg" value="signup"  />        
-            
+            <input type="submit" class="btn btn-primary btn-lg  btn-block" value="signup"  />      
+           
             </form>
           </div>
         </div>
       </div>  
 
-      <nav class="navbar ">
+      <!-- <nav class="navbar down1 ">
           <div class="container-fluid">
-             <div class="navbar-header navbar-left">
-                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+             <div class="navbar-header navbar-right">
+                 Term and Conditions Privacy Statement @ 2017 
              </div>
           </div>
-      </nav>  
+    </nav>   -->
 </body>
 </html>
 

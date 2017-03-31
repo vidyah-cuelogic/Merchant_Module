@@ -1,0 +1,21 @@
+.row
+{
+	padding-top: 30px;
+}
+ .glyphicon-ok-sign
+{
+  color: #23aa3c; 
+  font-size: 15px;
+  margin-left: 10px;
+}
+ .glyphicon-remove-sign ,.glyphicon-trash,.glyphicon-edit
+{
+  color: #d63e3e; 
+  font-size: 15px;
+  margin-left: 10px;
+}
+button
+{
+	color: white;
+	background-color:#32463f; 	
+}

@@ -12,12 +12,9 @@ $(document).ready(function() {
                 
                 validators: {
                     notEmpty: {
-                        message: 'Please provide email address'
+                        message: 'Email address is required'
                     },
-                    identical:
-                    {   field: 'email1',
-                        message: 'email is not same as confirm email '
-                    },
+                    
                     emailAddress: {
                         message: 'Please provide a valid email address'
                     }
@@ -28,18 +25,23 @@ $(document).ready(function() {
                 
                 validators: {
                     notEmpty: {
-                        message: 'Please provide email address'
+                        message: 'Email address is required'
                     },
                     identical:
                     {   field: 'email',
-                        message: 'confirm email is not same as email'
+                        message: 'Email should be same as above email'
                     },
-                    emailAddress: {
-                        message: 'Please supply a valid email address'
-                    }
+                    
                 }
 
             },
+            terms: {
+            validators: {
+                notEmpty: {
+                    message: 'You must agree with the terms and conditions'
+                }
+            }
+        },
             first_name: {
                
                 validators: {
@@ -50,7 +52,7 @@ $(document).ready(function() {
                         message:'first_name should have at least two character'                            
                     },
                         notEmpty: {
-                        message: 'Please provide your first name with no space'
+                        message: 'First Name is required '
                     }
                 }
             },
@@ -81,14 +83,11 @@ $(document).ready(function() {
                     },
                     regexp:
                     {
-                        regexp: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-z\d]+$/, 
+                        regexp: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&])[a-zA-z\d!@#$%^&]+$/, 
 
-                        message: 'The password should contain at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number '
+                        message: 'Please provide valid password'
                     },
-                    identical:
-                    {   field:"password1",
-                        message: 'password should be same as below '
-                    },
+                    
                     notEmpty:
                      {
                         message: 'Please provide password'
