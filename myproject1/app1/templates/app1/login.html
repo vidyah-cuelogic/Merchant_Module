@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
    
 
    <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
@@ -18,7 +17,7 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 
-<script type="text/javascript" src="{% static 'app1/js/form_validation.js' %}"></script>
+<script type="text/javascript" src="{% static 'app1/js/login_validation.js' %}"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
   
   
@@ -32,9 +31,7 @@
              <div class="navbar-header navbar-left">
                  <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
              </div>
-             <div class="navbar-header navbar-right">        
-                <a href="login"><button type="button" class="center btn  pull-right btn-lg">Log In</button></a>
-             </div>
+             
           </div>
        </nav>   
          
@@ -57,18 +54,17 @@
           {% endif %}
 
       <div class="row">
-          <div class="col-md-5 col-md-offset-4 box1" >       
-            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
+          <div class="col-md-4 col-md-offset-4 box1" >       
+            <form class="form-horizontal" method="post" action="/app1/dashboard/" id="contact_form" data-toggle="validator">     
              {%csrf_token%}
           
-              <div class="panel-title ">
-                <h1 >Log In to QuickBiz!!</h1>
+              <div class="panel-title text-center">
+                <h1 >Log In </h1>
                 <hr/>
               </div>
     
  
               <div class="form-group">
-                  {{ form.username.label_tag }}
                   <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user"> </span></span>
                     {{form.username}}                      
@@ -82,17 +78,20 @@
               </div>
             
               <div class="form-group">
-                  {{ form.password.label_tag }}
-                    <div class="input-group">
+                  <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock"> </span></span>
                     {{form.password}}                      
                   </div>
-              </div>       
-        
-             <a href="">I Forget. Help!</a>
-             <hr>
+              </div>
+              <hr>       
+              <div class="form-group">
+                <div class="pull-right">
+                <a href=""><u>I Forget. Help!</u></a>
+                </div>
+              </div>
              
-             <input type="submit" class="btn btn-warning pull-right btn-lg" value="login"  />
+             
+             <input type="submit" class="btn btn-primary btn-lg  btn-block" value="Log In"  /> 
             </form>
           </div>
       </div>

@@ -1,7 +1,28 @@
+.btn{
+	    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 
+}
+.down.btn a:hover{
+	text-decoration-line:  none;
+}
+.down.btn.btn-banner{
+	background-color: rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.6);
+    transition-duration: 0.55s;
+
+}    
+.down.btn.btn-banner:hover{
+	border-color: rgba(255,255,255,0);
+    background-color:#141c19;
+    font-weight: 400px;
+    color:white;
+
+    
+} 
 .center{
     margin-top: 5%;
     margin-bottom: 15%;
+    
 }
 .down{
 
@@ -9,8 +30,11 @@
 }
 .title
 {
-  font-family:  "Lucida Grande";
+  font-family:"Source Sans Pro";
   padding-left: 10%;
   padding-top: 10%;
 
+}
+.boy{
+	margin-top: 25%;
 }

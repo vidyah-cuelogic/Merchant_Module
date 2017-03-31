@@ -7,7 +7,7 @@ User=get_user_model()
 
 class SignupForm(forms.Form):
     
-    email = forms.EmailField(label='Email Address',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter Email address'}))
+    email = forms.EmailField(label='Email Address',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter Email address','title':'plz vidya'}))
     email1 = forms.EmailField(label='Confirm Email Address',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Re-enter Email address'}))
     first_name = forms.CharField(label='First name',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter first name'}))
     last_name=forms.CharField(label='Last name',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter last name'}))

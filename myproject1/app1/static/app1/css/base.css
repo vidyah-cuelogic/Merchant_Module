@@ -4,27 +4,15 @@ body
     background-size: cover;
     background-repeat: no-repeat;    
     color: white;
-    margin:0px;
-    padding:0px; 
-}
-html{
-margin:0px;
-    padding:0px; 
 }
 button
 {
-	color: white;
-	background-color:#32463f;
- 	
+	color: white; 	
 }
-button:hover{
-	
-	background-color:#111815; 
-  border: 2px solid black; 
-}
+
 .logo{
   width: 172px;
-  height: 46px;
+  height: 40px;
    
 }
 nav {
@@ -32,18 +20,16 @@ nav {
   background-color: rgba(0,0,0,0.1);
 
 }
-
 .box1
 {
   padding:3%;
   background-color: rgba(0,0,0,0.1);
   margin-bottom: 30px;
 }
-
 .input-group input 
 {
-    height: 40px;
-    
+    height: 40px; 
+    width: 100%;  
      
 }
 .input-group span
@@ -51,11 +37,23 @@ nav {
     width: 40px;
 
 }
+.form-group
+{
+  padding-left: 9%;
+}
 input{
   color: black;
 }
 .down1
 {
-  padding-right: 30px;
-  height: 100%;
+  margin-top: 8px;
+}
+.input-group span .glyphicon{
+  color:#107360;
+}
+.size{
+  font-size: 18px;
+}
+a{
+  border-bottom-color: none; 
 }

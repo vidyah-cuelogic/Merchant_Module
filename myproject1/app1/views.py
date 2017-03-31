@@ -11,9 +11,10 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from app1.forms import SignupForm,LoginForm,ProductForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request,"app1/dashboard.html",{})
+    return render(request,"app1/home.html",{})
 
     
 def login(request):
@@ -24,7 +25,7 @@ def login(request):
         form = LoginForm(request.POST)
 
         if form.is_valid():
-
+                print("plz")
                 return render(request,"app1/dashboard.html")
         else:  
                 return render(request,"app1/login.html",{'form':form})
@@ -46,9 +47,9 @@ def register(request):
                 subject="Welcome to QuickBizz!!!!"
                 from_email=settings.EMAIL_HOST_USER
                 to_list=[user.email,settings.EMAIL_HOST_USER]
-                send_mail(subject,'please click on following link to verify your email address: http://127.0.0.1:8002/app1/login_firsttime/?uid=%s'%(hash1),from_email,to_list,fail_silently=True)
+                send_mail(subject,'please click on following link to verify your email address: http://'+settings.HOST+'/app1/login_firsttime/?uid=%s'%(hash1),from_email,to_list,fail_silently=True)
                 messages.success(request, ' verification link has been sent to your email address')
-                return render(request,'app1/login.html')
+                return render(request,'app1/email.html')
                        
             else:
                 
@@ -79,12 +80,16 @@ def login_firsttime(request):
     messages.success(request, "you have verified your email")
     return render(request,"app1/login.html",{'form':form})
 
+@login_required(login_url="/app1/login/")
 def dashboard(request):
     return render(request,"app1/dashboard.html",{})
 
+@login_required(login_url="/app1/login/")
 def products(request):
     return render(request,"app1/products.html",{})
 
+@login_required(login_url="/app1/login/")
 def create_product(request):
     form=ProductForm()
     return render(request,"app1/create_product.html",{'form':form})
+
