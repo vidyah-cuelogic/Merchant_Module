@@ -14,10 +14,7 @@ $(document).ready(function() {
                     notEmpty: {
                         message: 'Please provide email address'
                     },
-                    identical:
-                    {   field: 'email1',
-                        message: 'email is not same as confirm email '
-                    },
+                    
                     emailAddress: {
                         message: 'Please provide a valid email address'
                     }
@@ -81,14 +78,11 @@ $(document).ready(function() {
                     },
                     regexp:
                     {
-                        regexp: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[a-zA-z\d]+$/, 
+                        regexp: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&])[a-zA-z\d!@#$%^&]+$/, 
 
                         message: 'The password should contain at least 1 Uppercase Alphabet, 1 Lowercase Alphabet, 1 Number '
                     },
-                    identical:
-                    {   field:"password1",
-                        message: 'password should be same as below '
-                    },
+                    
                     notEmpty:
                      {
                         message: 'Please provide password'

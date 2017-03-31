@@ -1,0 +1,34 @@
+.row
+{
+	padding-top: 30px;
+	padding-bottom: 0px;
+}
+.form-horizontal
+{
+	padding-right:20px;
+}
+button
+{
+	color: white;
+	background-color:#32463f;
+ 	
+}
+.red{
+	
+	color: red;
+}
+.box1
+{	height: 70px;
+	overflow-y: scroll;
+	padding-left: 20px;
+}
+hr
+{
+	margin: 0px;
+}
+form  img
+    {
+      width: 150px;
+      margin: 20px;
+      float: left;
+    }

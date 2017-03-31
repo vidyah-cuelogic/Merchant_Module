@@ -3,10 +3,9 @@
         margin-top: 50px;
     }
 }
-body {
-    background-image: url("/static/app1/images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+body
+{
+   background-color: #eeeeee;
 
 }
 .logo{
@@ -14,64 +13,67 @@ body {
   height: 46px;
    
 }
-nav {
-  
-  background-color: #32463f;
+header>nav, aside>nav{  
+  background-color: #32463f; 
+}
 
+.down{
+    padding-top: 10px;
+}
+header li a, aside li a
+{   
+    
+    color:white;
+    font-size: 15px;
 }
 ul
 {
     list-style-type:none;
 }
-.navbar ul li a
-{
-    
-    color: white;
-    font-size: 20px;
+.collapse{
+    padding-left: 0px;
 }
+#demo li a{
+    display:block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
         top: 50px;        
         width: 200px;        
         background-color: #32463f;
-        bottom: 0;
-        
+        bottom: 0;       
         
     }
-.side-nav>li>a 
+.side-nav li a 
 {
-    width: 200px;
-    color:white;
-    font-size: 20px;
+    width: 200px;    
+    border-bottom: 2px solid white;
 }
+
 .side-nav li a:hover,
 .side-nav li a:focus 
 {
     color:#32463f;
     background-color: white;        
 }
+.dropdown-menu{      
+    background-color: #32463f;
+}
+.dropdown-menu li a {      
+    color:white;
+}
+
 }
 @media(min-width:768px) {
 section
 {
-    padding-left:220px;      
+    padding-left:220px; 
+
 }
-}
-#demo>li>a
-{
-    
-    color:white;
-    font-size: 20px;
-}
-#demo li a:hover,
-#demo li a:focus 
-{
-    color:#32463f;
-    background-color: white;        
-}
-ul .dropdown-menu {
-       
-    background-color: #32463f;
 }
 

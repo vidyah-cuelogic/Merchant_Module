@@ -128,7 +128,7 @@
             <hr/>
             
             <div class="form-group">
-                <label class="control-label">Enter text given below.Can't read the text? <a href="">Try different text</a></label><br><br>
+                
               {{form.captcha}}
               {% if form.captcha.errors %}
                     {% for error in form.captcha.errors %}
@@ -145,11 +145,11 @@
 
       <nav class="navbar ">
           <div class="container-fluid">
-             <div class="navbar-header navbar-left">
-                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+             <div class="navbar-header navbar-right">
+                 Term and Conditions Privacy Statement @ 2017 
              </div>
           </div>
-      </nav>  
+    </nav>  
 </body>
 </html>
 

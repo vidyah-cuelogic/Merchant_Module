@@ -4,6 +4,12 @@ body
     background-size: cover;
     background-repeat: no-repeat;    
     color: white;
+    margin:0px;
+    padding:0px; 
+}
+html{
+margin:0px;
+    padding:0px; 
 }
 button
 {
@@ -29,7 +35,6 @@ nav {
 
 .box1
 {
-  border:2px solid green; 
   padding:3%;
   background-color: rgba(0,0,0,0.1);
   margin-bottom: 30px;
@@ -38,10 +43,19 @@ nav {
 .input-group input 
 {
     height: 40px;
+    
      
 }
 .input-group span
 {
     width: 40px;
 
+}
+input{
+  color: black;
+}
+.down1
+{
+  padding-right: 30px;
+  height: 100%;
 }
