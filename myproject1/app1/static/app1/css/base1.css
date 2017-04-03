@@ -13,10 +13,12 @@ body
   height: 46px;
    
 }
-header>nav, aside>nav{  
-  background-color: #32463f; 
+header>nav{  
+  background-color: #15221e; 
 }
-
+aside>nav{  
+  background-color: #1f2f2a; 
+}
 .down{
     padding-top: 10px;
 }
@@ -30,14 +32,18 @@ ul
 {
     list-style-type:none;
 }
-.collapse{
+ul #demo{
     padding-left: 0px;
 }
-#demo li a{
+ul  #demo  li a{
     display:block;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 15px; 
 
+}
+a:focus, a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 @media(min-width:768px) {
@@ -52,14 +58,15 @@ ul
 .side-nav li a 
 {
     width: 200px;    
-    border-bottom: 2px solid white;
+    
 }
 
 .side-nav li a:hover,
 .side-nav li a:focus 
 {
-    color:#32463f;
-    background-color: white;        
+    color:#b6b224;
+    border-left: 2px solid #b6b224;
+    background-color: #202f2a;        
 }
 .dropdown-menu{      
     background-color: #32463f;

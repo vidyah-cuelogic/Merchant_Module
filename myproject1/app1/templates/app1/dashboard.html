@@ -29,7 +29,9 @@
       <nav class="navbar navbar-fixed-top" >
         <div class="container-fluid">
           <div class="navbar-header">
-              <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" >
+              <a href="#" id="bottle" onclick="javascript:window.history.back(-1);return false;" >
+                      <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" /> 
+              </a>
           </div> 
               <ul class=" navbar-right">                
                 <li class="dropdown down">
@@ -67,13 +69,13 @@
                         <a href="#"><span class="glyphicon glyphicon-home">
                   </span>  Home</a>
                     </li>
-                    <li class="divider"></li>
+                   
                     <li>
                         <a href="/app1/dashboard/products/"><span class="glyphicon glyphicon-inbox">
                   </span> Products</a>
                     </li>
-                    <li class="divider"></li>
-                    <li>
+                    
+                   <li>
                         <a href="#"><span class="glyphicon glyphicon-gift">
                   </span> Offers</a>
                     </li>
@@ -93,11 +95,12 @@
                         
                         </ul>
                     </li>
+                    
                     <li>
                         <a href=""><span class="glyphicon glyphicon-cog">
                   </span> Settings</a>
                     </li>
-                </ul>
+      </ul>
     </aside>
 
     <section>

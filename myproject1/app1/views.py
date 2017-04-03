@@ -80,15 +80,13 @@ def login_firsttime(request):
     messages.success(request, "you have verified your email")
     return render(request,"app1/login.html",{'form':form})
 
-@login_required(login_url="/app1/login/")
 def dashboard(request):
     return render(request,"app1/dashboard.html",{})
 
-@login_required(login_url="/app1/login/")
+
 def products(request):
     return render(request,"app1/products.html",{})
 
-@login_required(login_url="/app1/login/")
 def create_product(request):
     form=ProductForm()
     return render(request,"app1/create_product.html",{'form':form})

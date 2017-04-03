@@ -27,7 +27,9 @@
         <nav class="navbar ">
           <div class="container-fluid">
              <div class="navbar-header navbar-left">
-                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+                 <a href="#" id="bottle" onclick="javascript:window.history.back(-1);return false;" >
+                      <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" /> 
+                 </a>
              </div>
           </div>
         </nav>
@@ -42,7 +44,7 @@
             {% endif %}
         <div class="row">
           <div class="col-md-4 col-md-offset-4 box1" >       
-            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
+            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">  
              {%csrf_token%}
           
               <div class="panel-title text-center ">
@@ -108,6 +110,7 @@
                   </span></span>
                   {{form.password}}
                 </div>
+                <span title="abc"><span class="glyphicon glyphicon-info-sign" ></span></span>
                   {% if form.password.errors %}
                     {% for error in form.password.errors %}
                     {{ error }}

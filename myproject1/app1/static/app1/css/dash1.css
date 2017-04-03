@@ -45,5 +45,8 @@ section
 .panel .glyphicon {
     font-size: 30px;
 }
-
+a:focus, a:hover {
+    color: white;
+    text-decoration: none;
+}
 

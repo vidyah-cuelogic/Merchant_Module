@@ -29,7 +29,7 @@ nav {
 .input-group input 
 {
     height: 40px; 
-    width: 100%;  
+    
      
 }
 .input-group span
@@ -56,4 +56,19 @@ input{
 }
 a{
   border-bottom-color: none; 
+}
+.glyphicon-info-sign
+{
+  font-size: 30px;
+}
+span .glyphicon-info-sign{
+    position: relative;
+}
+span:over {
+    content:attr(title);
+    padding:5px;
+    border:1px solid #ccc;
+    top:5px;
+    right:10%;
+    background: #bada55;
 }
