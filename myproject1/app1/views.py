@@ -12,22 +12,28 @@ from django.http import HttpResponseRedirect
 from app1.forms import SignupForm,LoginForm,ProductForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth import authenticate, login, logout
 def home(request):
     return render(request,"app1/home.html",{})
 
+
+def login_view(request):
     
-def login(request):
+    username = password = ''
     if request.method == 'GET':
             form = LoginForm()
             return render(request,"app1/login.html",{'form':form})
     if request.method == 'POST':
         form = LoginForm(request.POST)
-
-        if form.is_valid():
-                print("plz")
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
                 return render(request,"app1/dashboard.html")
         else:  
+                messages.success(request, ' Invalid user')
                 return render(request,"app1/login.html",{'form':form})
     
 
@@ -49,7 +55,8 @@ def register(request):
                 to_list=[user.email,settings.EMAIL_HOST_USER]
                 send_mail(subject,'please click on following link to verify your email address: http://'+settings.HOST+'/app1/login_firsttime/?uid=%s'%(hash1),from_email,to_list,fail_silently=True)
                 messages.success(request, ' verification link has been sent to your email address')
-                return render(request,'app1/email.html')
+                form = LoginForm(request.POST)
+                return render(request,'app1/login.html',{'form':form})
                        
             else:
                 
@@ -78,15 +85,17 @@ def login_firsttime(request):
     username.is_active=True
     username.save()
     messages.success(request, "you have verified your email")
-    return render(request,"app1/login.html",{'form':form})
+    return HttpResponseRedirect('/app1/login/')
 
+@login_required(login_url='/app1/login/')
 def dashboard(request):
     return render(request,"app1/dashboard.html",{})
 
-
+# @login_required(login_url='/app1/login/')
 def products(request):
     return render(request,"app1/products.html",{})
 
+# @login_required(login_url='/app1/login/')
 def create_product(request):
     form=ProductForm()
     return render(request,"app1/create_product.html",{'form':form})

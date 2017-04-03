@@ -1,7 +1,7 @@
 
 from django import forms 
 from captcha.fields import CaptchaField
-from django.contrib.auth import (get_user_model,authenticate,login,logout)
+from django.contrib.auth import (get_user_model)
 from app1.models import Products
 User=get_user_model()
 
@@ -27,19 +27,7 @@ class LoginForm(forms.Form):
 
     username = forms.EmailField(label='Username',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter Email address'}))
     password = forms.CharField(label='Password',widget=forms.PasswordInput(attrs={'class':'form-control','placeholder': 'Enter Password'}))
-    
-    def clean(self):
-        super(LoginForm, self).clean()
-        username=self.cleaned_data.get('username')
-        password=self.cleaned_data.get('password')
-        user=authenticate(username=username,password=password)
 
-        if not user:
-            print("yes")
-            raise forms.ValidationError("Invalid user")
-        else:
-            print("no")
-        return self.cleaned_data
 
 class ProductForm(forms.Form):
     product_name=forms.CharField(label='Product Name',widget=forms.TextInput(attrs={'class':'form-control'}))

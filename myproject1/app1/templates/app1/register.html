@@ -17,6 +17,7 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="{% static 'app1/js/reg_validation.js' %}"></script>
+<script type="text/javascript" src="{% static 'app1/js/vali.js' %}"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
   
 
@@ -105,12 +106,18 @@
             </div>
             
             <div class="form-group">
-                <div class="input-group">
+                <div class="input-group">                
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock">
                   </span></span>
                   {{form.password}}
-                </div>
-                <span title="abc"><span class="glyphicon glyphicon-info-sign" ></span></span>
+                </div>&nbsp;
+                <a id="displayText" href="javascript:toggle();"><span class="glyphicon glyphicon-info-sign" ></span></a>
+
+                  <div id="toggleText" class="alert alert-info" style="display: none">
+                      <p>1. Password should contain at least one uppercase and lowercase letter, one digit and one symbol</p>
+                      <p>2. Password should contain minimum 8 character and maximum 16 character</p>
+                  </div>
+                
                   {% if form.password.errors %}
                     {% for error in form.password.errors %}
                     {{ error }}

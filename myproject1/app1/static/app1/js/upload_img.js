@@ -38,5 +38,11 @@ function loadPreviews(){
     }
 }
     
+$(function(){
+    $("#demo").click(msg);
+})
+function msg(){
 
-    
+message: 'Please provide a valid email address'
+alert( "Handler for .click() called." );
+}

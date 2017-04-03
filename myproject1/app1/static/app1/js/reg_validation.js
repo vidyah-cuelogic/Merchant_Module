@@ -79,7 +79,7 @@ $(document).ready(function() {
                     {                    
                         min: 8,                    
                         max: 16,                    
-                        message:'password must have at least 8 character and maximum 16 characters'                            
+                        message:''                            
                     },
                     regexp:
                     {
@@ -132,3 +132,4 @@ $(document).ready(function() {
         });
 });
 
+ 

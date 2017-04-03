@@ -56,7 +56,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="/app1/"><span class="glyphicon glyphicon-power-off"></span> Log Out</a>
+                            <a href="span class="glyphicon glyphicon-power-off"></span> Log Out</a>
                         </li>
                     </ul>
 
@@ -69,12 +69,12 @@
     <aside>
       <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="/app1/login_firsttime/dashboard/"><span class="glyphicon glyphicon-home">
+                        <a href="{% url 'dashboard' %}"><span class="glyphicon glyphicon-home">
                         </span>  Home</a>
                     </li>
 
                     <li class="active">
-                        <a href="/app1/dashboard/products/"><span class="glyphicon glyphicon-inbox">
+                        <a href="{% url 'products' %}"><span class="glyphicon glyphicon-inbox">
                         </span> Products</a>
                     </li>
                     <li class="divider"></li>
@@ -195,7 +195,7 @@
                   </div>
                   <div class="form-group">
                       <div class="pull-right">
-                        <button type="button" class="btn " data-toggle="modal" data-target="#myModal" ">Add Images</button>
+                        <button type="button" class="color btn-banner btn " data-toggle="modal" data-target="#myModal" ">Add Images</button>
 
                           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -230,7 +230,7 @@
                                       </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class=" btnLoadPreviews btn btn-secondary" data-dismiss="modal">Upload</button>
+                                    <button type="button" class=" btnLoadPreviews color btn-banner btn btn-secondary" data-dismiss="modal">Upload</button>
                                     
                                 </div>
                               </div>
@@ -253,7 +253,7 @@
         <div class="row">
           <div class="col-md-3 col-md-offset-9 pull-right">
               <button type="button" class="btn btn-default" >Cancle</button>
-              <button type="button" class="btn btn-secondary" >Save</button>
+              <button type="button" class="color btn-banner btn btn-secondary" >Save</button>
           </div>
         </div>
     </section>

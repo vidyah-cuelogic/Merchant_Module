@@ -52,7 +52,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="/app1/"><span class="glyphicon glyphicon-power-off"></span> Log Out</a>
+                            <a href=""><span class="glyphicon glyphicon-power-off"></span> Log Out</a>
                         </li>
                     </ul>
 
@@ -65,12 +65,12 @@
     <aside>
       <ul class="nav navbar-nav side-nav">
                     <li  >
-                        <a href="/app1/dashboard/"><span class="glyphicon glyphicon-home">
+                        <a href="{% url 'dashboard' %}"><span class="glyphicon glyphicon-home">
                   </span>  Home</a>
                     </li>
                     <li class="divider"></li>
                     <li class="active">
-                        <a href=""><span class="glyphicon glyphicon-inbox">
+                        <a href="{% url 'products' %}"><span class="glyphicon glyphicon-inbox">
                   </span> Products</a>
                     </li>
                     <li class="divider"></li>
@@ -139,7 +139,7 @@
 
         <div class="row">
           <div class="col-md-2 col-md-offset-10">
-            <a href="/app1/dashboard/products/create_product/"><button type="button" class="btn pull-right ">Create Product</button></a>
+            <a href="{% url 'create_product' %}"><button type="button" class="color btn-banner btn pull-right ">Create Product</button></a>
           </div>
         </div>
 
