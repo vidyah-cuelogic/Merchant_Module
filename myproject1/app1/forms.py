@@ -4,7 +4,7 @@ from captcha.fields import CaptchaField
 from django.contrib.auth import (get_user_model)
 from app1.models import Products
 User=get_user_model()
-
+YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
 class SignupForm(forms.Form):
     
     email = forms.EmailField(label='Email Address',widget=forms.TextInput(attrs={'class':'form-control','placeholder': 'Enter Email address','title':'plz vidya'}))
@@ -34,11 +34,11 @@ class ProductForm(forms.Form):
     category=forms.CharField(label='Category',widget=forms.TextInput(attrs={'class':'form-control'}))
     offer=forms.CharField(required=False,label='Offer',widget=forms.TextInput(attrs={'class':'form-control'}))
     product_specification=forms.CharField(label='Product specification',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
-    product_cost=forms.CharField(label='Product cost',widget=forms.TextInput(attrs={'class':'form-control'}))
+    product_cost=forms.DecimalField(label='Product cost',widget=forms.NumberInput(attrs={'class':'form-control'}))
     material_details=forms.CharField(label='Material Details',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
-    quantity=forms.DecimalField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control'}))
+    quantity=forms.IntegerField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control'}))
     deliver_charges=forms.DecimalField(label='Delivery Charges',widget=forms.NumberInput(attrs={'class':'form-control'}))
-    YESNO_CHOICES = ((0, 'No'), (1, 'Yes'))
+    
     return_allowed = forms.TypedChoiceField(
                      choices=YESNO_CHOICES, widget=forms.RadioSelect, coerce=int
                 )

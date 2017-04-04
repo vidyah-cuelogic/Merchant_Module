@@ -30,7 +30,7 @@ SECRET_KEY = 'dh72@=v!lku-0=27cf7w1s_mmr4akz=e6b0f%$$y(iiv^u_0x('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-HOST =  "127.0.0.1:8001"
+HOST =  "127.0.0.1:8000"
 
 ALLOWED_HOSTS = ['dev.merchantmodule.com', '127.0.0.1', '172.21.32.78']
 

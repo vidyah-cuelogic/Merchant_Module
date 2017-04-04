@@ -40,7 +40,7 @@
                 <li class="dropdown down">
                   <a href="#" class="dropdown-toggle " data-toggle="dropdown">
                       <span class="glyphicon glyphicon-user"></span>
-                      Vidya hulwan 
+                      {{request.user.first_name}} {{request.user.last_name}}
                       <span class="glyphicon glyphicon-menu-down"></span>
                   </a> 
 
@@ -56,7 +56,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="span class="glyphicon glyphicon-power-off"></span> Log Out</a>
+                            <a href="/app1/logout/" class="glyphicon glyphicon-power-off"></span> Log Out</a>
                         </li>
                     </ul>
 
@@ -106,7 +106,7 @@
 
     <section>
         <div class="row">
-            <form class="form-horizontal" method="post" action="">{%csrf_token%}
+            <form class="form-horizontal" id="myform" method="post" >{%csrf_token%}
                 <div class="col-md-6">
                   <div class="form-group">                      
                       <label class="col-md-4 control-label "><label class=" red ">{% if form.product_name.field.required %} *{% endif %}</label>{{ form.product_name.label_tag }}</label>
@@ -143,10 +143,10 @@
                       </div>
                   </div>
                   <div class="form-group">
-                        <label class="col-md-4 control-label"><label class=" red "> *</label>Available color</label>
+                        <label class="col-md-4 control-label"><label class=" red "> </label>Available color</label>
                         <div class="col-md-3">
                             <div class="input-group">
-                                <input id="color1" class="controlset" type="text" name="color1" value="#333399" />
+                                <input id="color1" class="controlset" type="text" name="color1" value="#333399" required=False />
                                 <span class="input-group-addon "><span class="glyphicon glyphicon-plus"> </span></span>
                             </div>                            
                         </div>
@@ -195,7 +195,7 @@
                   </div>
                   <div class="form-group">
                       <div class="pull-right">
-                        <button type="button" class="color btn-banner btn " data-toggle="modal" data-target="#myModal" ">Add Images</button>
+                        <button type="button" class="color btn-banner btn " data-toggle="modal" data-target="#myModal" >Add Images</button>
 
                           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -208,7 +208,7 @@
                                 </div>
                                 <div class="modal-body">
                                       <div class="form-group">
-                                        <label class="col-md-4 control-label"><label class=" red "> *</label>Available color</label>
+                                        <label class="col-md-4 control-label"><label class=" red "> </label>Available color</label>
                                         <div class="col-md-2">
                                           <div class="input-group">
                                             <input id="color2" class="controlset" type="text" name="color2" value="#333399" />
@@ -239,6 +239,7 @@
                       </div>                      
                   </div>
                 </div>
+                <input type="submit" class="color btn-banner btn btn-secondary" value="Save"  /> 
             </form> 
              
         </div>
@@ -253,7 +254,8 @@
         <div class="row">
           <div class="col-md-3 col-md-offset-9 pull-right">
               <button type="button" class="btn btn-default" >Cancle</button>
-              <button type="button" class="color btn-banner btn btn-secondary" >Save</button>
+              
+              
           </div>
         </div>
     </section>

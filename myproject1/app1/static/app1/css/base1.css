@@ -10,8 +10,7 @@ body
 }
 .logo{
   width: 172px;
-  height: 46px;
-   
+  height: 40px; 
 }
 header>nav{  
   background-color: #15221e; 
@@ -37,28 +36,30 @@ ul #demo{
 }
 ul  #demo  li a{
     display:block;
-    padding-top: 15px;
-    padding-bottom: 15px; 
-
+    padding:15px 0 15px 40px;
 }
 a:focus, a:hover {
     color: white;
     text-decoration: none;
 }
-
+.navbar{
+  margin-bottom:0;
+  min-height: 40px;
+}
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 50px;        
+        top: 40px;        
         width: 200px;        
         background-color: #32463f;
-        bottom: 0;       
+        bottom: 0; 
+
         
     }
-.side-nav li a 
+.side-nav>li>a 
 {
-    width: 200px;    
-    
+    width: 200px;
+    border-bottom: 0.5px solid #688a7e;    
 }
 
 .side-nav li a:hover,

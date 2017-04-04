@@ -20,6 +20,10 @@ nav {
   background-color: rgba(0,0,0,0.1);
 
 }
+.container
+{
+  margin-top: 10px;
+}
 .box1
 {
   padding:3%;
@@ -29,8 +33,7 @@ nav {
 .input-group input 
 {
     height: 40px; 
-    
-     
+        
 }
 .input-group span
 {
@@ -41,12 +44,13 @@ nav {
 {
   padding-left: 9%;
 }
-input{
+.form-group .input-group input{
   color: black;
 }
-.down1
-{
-  margin-top: 8px;
+
+.navbar{
+  margin-bottom:0;
+  min-height: 40px;
 }
 .input-group span .glyphicon{
   color:#107360;
@@ -71,4 +75,33 @@ span:over {
     top:5px;
     right:10%;
     background: #bada55;
+}
+.down1{
+
+    margin-top:30%;
+}
+.btn{
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.down.btn.btn-banner{
+  background-color: rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.6);
+    transition-duration: 0.55s;
+
+}    
+.down.btn.btn-banner:hover{
+  border-color: rgba(255,255,255,0);
+    background-color:#141c19;
+    font-weight: 400px;
+    color:white;   
+}
+.form-group a{
+  color:black;
+}
+.form-group #displayText .glyphicon 
+{
+  position: absolute;
+  top:2px;
+  left:40px;
 }

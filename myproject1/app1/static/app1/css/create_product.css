@@ -50,3 +50,9 @@ form  img
     font-weight: 400px;
     color:white;   
 }
+.form-group .input-group .input-group-addon 
+{
+	border:1px solid gray;
+	background-color: lightgray;
+	
+}

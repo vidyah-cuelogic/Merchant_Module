@@ -1,21 +1,22 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib import messages
-from app1.models import emailverify
+from app1.models import Merchants,emailverify,Products,Categories,Product_Category,Offers,Product_color_images,Merchant_Products
 from datetime import datetime, timedelta
 import hashlib
 import os
 import uuid
 from django.shortcuts import render
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse,JsonResponse
 from app1.forms import SignupForm,LoginForm,ProductForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+
+
 def home(request):
     return render(request,"app1/home.html",{})
-
 
 def login_view(request):
     
@@ -31,7 +32,7 @@ def login_view(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request,"app1/dashboard.html")
+                return HttpResponseRedirect('/app1/dashboard/')
         else:  
                 messages.success(request, ' Invalid user')
                 return render(request,"app1/login.html",{'form':form})
@@ -85,18 +86,25 @@ def login_firsttime(request):
     username.is_active=True
     username.save()
     messages.success(request, "you have verified your email")
-    return HttpResponseRedirect('/app1/login/')
+    return HttpResponseRedirect('/app1/login_view/')
 
-@login_required(login_url='/app1/login/')
+@login_required(login_url='/app1/login_view/')
 def dashboard(request):
     return render(request,"app1/dashboard.html",{})
 
-# @login_required(login_url='/app1/login/')
+@login_required(login_url='/app1/login_view/')
 def products(request):
     return render(request,"app1/products.html",{})
 
-# @login_required(login_url='/app1/login/')
+@login_required(login_url='/app1/login_view/')
 def create_product(request):
-    form=ProductForm()
-    return render(request,"app1/create_product.html",{'form':form})
-
+    if request.method == 'GET':
+        form=ProductForm()
+        return render(request,"app1/create_product.html",{'form':form})
+    if request.method == 'POST':
+        data=request.POST;
+        q=Products(product_name=data[u'product_name'],quantity=data[u'quantity'],product_cost=data[u'product_cost'] ,deliver_charges=data[u'deliver_charges'] ,return_allowed=data[u'return_allowed'],return_within=data[u'return_within'],product_speficication=data[u'product_specification'],material_speficication=data[u'material_details'])
+        q.save()
+        return HttpResponse("data insert into database")            
+    return HttpResponse("Something went wrong")
+     

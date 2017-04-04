@@ -109,6 +109,15 @@ $(document).ready(function() {
                     
                 }
             },
+
+            captcha: {
+                
+                validators: {
+                    notEmpty: {
+                        message: 'Please provide  password for confiramation'
+                    }                    
+                }
+            },
             
             }
         })
