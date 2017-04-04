@@ -41,6 +41,7 @@ ul #demo {
 
 ul #demo li a {
     display: block;
+    background-color: #202f2a;
     padding: 15px 0 15px 40px;
 }
 
