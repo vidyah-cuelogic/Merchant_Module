@@ -17,23 +17,18 @@ body
 .center{
     margin-top: 25%;
 }
-
 h1 p{
     padding-top: 2%;
 }
 h1.title { 
     font-size: 40px;
-    color: red;
-    
+    color: red;    
     font-weight: 300; 
 }
-
 hr{
     width: 100%;
     color: gray;
 }
-
-
 .input-group input 
 {
     height: 45px;
@@ -43,6 +38,5 @@ hr{
 .input-group span
 {
     width: 35px;
-
 }
 

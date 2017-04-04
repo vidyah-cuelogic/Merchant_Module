@@ -1,15 +1,12 @@
 $(document).ready(function() {
-    $('#contact_form').bootstrapValidator({
-        
+    $('#contact_form').bootstrapValidator({        
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-
-            email: {
-                
+            email: {                
                 validators: {
                     notEmpty: {
                         message: 'Please provide email address'
@@ -22,10 +19,8 @@ $(document).ready(function() {
                         message: 'Please provide a valid email address'
                     }
                 }
-
             },
-            email1: {
-                
+            email1: {                
                 validators: {
                     notEmpty: {
                         message: 'Please provide email address'
@@ -38,10 +33,8 @@ $(document).ready(function() {
                         message: 'Please supply a valid email address'
                     }
                 }
-
             },
-            first_name: {
-               
+            first_name: {               
                 validators: {
                         stringLength: 
                     {                    
@@ -54,8 +47,7 @@ $(document).ready(function() {
                     }
                 }
             },
-            last_name: {
-               
+            last_name: {               
                 validators: {
                     stringLength: 
                     {                    
@@ -69,9 +61,7 @@ $(document).ready(function() {
                     }
                 }
             },
-
-            password: {
-               
+            password: {               
                 validators: {
                     stringLength: 
                     {                    
@@ -93,12 +83,11 @@ $(document).ready(function() {
                      {
                         message: 'Please provide password'
                     }
-                                       
+                                   
                 }
             },
             
-            password1: {
-                
+            password1: {                
                 validators: {
                     notEmpty: {
                         message: 'Please provide  password for confiramation'
@@ -107,29 +96,18 @@ $(document).ready(function() {
                     {   field:"password",
                         message: 'password should be same as above '
                     }
-                    
                 }
             },
-            
             }
         })
         .on('success.form.bv', function(e) {
             $('#success_message').slideDown({ opacity: "show" }, "slow") 
                 $('#contact_form').data('bootstrapValidator').resetForm();
-
-            
-            e.preventDefault();
-
-            
-            var $form = $(e.target);
-
-            
-            var bv = $form.data('bootstrapValidator');
-
-            
+           e.preventDefault();            
+            var $form = $(e.target);            
+            var bv = $form.data('bootstrapValidator');            
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 console.log(result);
             }, 'json');
         });
 });
-

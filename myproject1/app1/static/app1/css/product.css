@@ -3,40 +3,32 @@
     margin-top: 100px;
     font-size: 15px;
 	width: 100%;
-      padding: 0;
-   
+    padding: 0;   
 }
 nav {
     color: white;
     font-size: 15px;
 }
-ul
-{
+ul{
     list-style-type:none;
 }
 b{
     font-size: 20px;
-
 }
-
-
 .fontsize
 {
     font-size: 20px;
     padding-bottom: 10px;
-    padding-top: 0;
-        
+    padding-top: 0;        
 }
 .first{
 	
 	float :left;
 }
-
 .row
 {
 	margin-top: 20px;
-	margin-left: 20px;
-	
+	margin-left: 20px;	
 }
  .glyphicon-ok-sign
 {
@@ -48,18 +40,15 @@ b{
 	color: red; 
 	font-size: 15px;
 }
-
 .container
 {
 	margin-top:40px;
-	width: 100%;
-	
+	width: 100%;	
 }
 button
 {
 	color:#d5e8e0;
-	background-color:#32463f;
-	
+	background-color:#32463f;	
 }
 div .down{
     margin-top: 15%;

@@ -2,18 +2,14 @@ body
 {
     background-image: url("/static/app1/images/background.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    
+    background-repeat: no-repeat;    
 }
 nav {
-  
-  background-color: #56776A;
-
+    background-color: #56776A;
 }
 .logo{
   width: 172px;
   height: 46px;
-    /*max-width: 100%;*/
 }
 .center{
     margin-top: 5%;
@@ -25,14 +21,11 @@ nav {
 button
 {
 	color:#d5e8e0;
-	background-color:#32463f;
-	
+	background-color:#32463f;	
 }
 button:hover{
 	color: #fff;
-	background-color:#111815;
-      
-
+	background-color:#111815;   
 }
 .input-group input 
 {
@@ -46,12 +39,10 @@ button:hover{
 
 }
 .container 
-{
-	
-	background-color:white;
-	/*opacity: 0.5;
-	filter: alpha(opacity=50);*/ 
+{	
+	background-color:white; 
 	border: 2px solid green;
 	max-width:40%; 
 	padding:20px 30px 20px 40px;
 }
+

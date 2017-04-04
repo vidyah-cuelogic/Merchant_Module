@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
 
    <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap-theme.min.css' %}">
@@ -16,21 +15,18 @@
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="{% static 'app1/js/form_validation.js' %}"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
-  
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script> 
 
   <title> Registration page</title>
 </head>
 <body >
-
           <nav class="navbar ">
           <div class="container-fluid">
              <div class="navbar-header navbar-left">
                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
              </div>
           </div>
-          </nav>
-      
+          </nav>      
       <div class="container">
         {% if form.non_field_errors %}
           {% for error in form.non_field_errors %}
@@ -38,27 +34,21 @@
                 <strong>{{ error|escape }}</strong>
               </div>
           {% endfor %}
-        {% endif %}
-       
-        <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
+        {% endif %}       
+        <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">    
            
-            {%csrf_token%}
-
-
-          
+            {%csrf_token%}          
         <div class="panel-title ">
           <h1 >User Info</h1>
           <hr/>
-        </div>
-    
+        </div>  
  
-            <div class="form-group ">
-              
+            <div class="form-group ">              
               <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-envelope">
                   </span></span>
-                  {{form.email}}                                   
+                  {{form.email}}            
                 </div>                
                   {% if form.email.errors %}
                     {% for error in form.email.errors %}
@@ -67,15 +57,13 @@
                   {% endif %}
               </div>
             </div>
-            <div class="form-group">
-              
+            <div class="form-group">              
               <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-envelope">
                   </span></span>
-                  {{form.email1}}                                             
+                  {{form.email1}}                                        
                 </div>
-
                   {% if form.email1.errors %}
                     {% for error in form.email1.errors %}
                     {{ error }}
@@ -83,102 +71,81 @@
                   {% endif %}
               </div>
             </div>
-            <div class="form-group">
-              
+            <div class="form-group">              
               <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user">
                   </span></span>
                   {{form.first_name}} 
-
                   {% if form.first_name.errors %}
                     {% for error in form.first_name.errors %}
                     {{ error }}
                     {% endfor %}
-                  {% endif %}
-                                              
+                  {% endif %}                                             
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              
+            <div class="form-group">              
               <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user">
                   </span></span>
                   {{form.last_name}}
-
                   {% if form.last_name.errors %}
                     {% for error in form.last_name.errors %}
                     {{ error }}
                     {% endfor %}
                   {% endif %}
-                                               
+                                            
                 </div>
               </div>
-            </div>
-            
-            <div class="form-group">
-              
+            </div>            
+            <div class="form-group">              
               <div class="col-md-12">
                 <div class="input-group">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock">
                   </span></span>
                   {{form.password}}
-
                   {% if form.password.errors %}
                     {% for error in form.password.errors %}
                     {{ error }}
                     {% endfor %}
-                  {% endif %}
-                                              
+                  {% endif %}                                              
                 </div>
               </div>
             </div>
-            <div class="form-group">
-             
+            <div class="form-group">             
               <div class="col-md-12">
                 <div class="input-group ">
                     <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock">
                   </span></span>
-                  {{form.password1}}
-
-                                         
+                  {{form.password1}}                                         
                 </div>
               </div>
             </div>
-            <hr/>
-         
-              <input type="checkbox" required="True" > I agree to QuickBiz's <a href="">Terms of Use and Privacy Policy</a>
-            
-
+            <hr/>         
+              <input type="checkbox" required="True" > I agree to QuickBiz's <a href="">Terms of Use and Privacy Policy</a>            
             <hr/>
             <div class="form-group">
                 <label class="control-label">Enter text given below.Can't read the text? <a href="">Try different text</a></label><br><br>
               {{form.captcha}}
-
               {% if form.captcha.errors %}
                     {% for error in form.captcha.errors %}
                     {{ error }}
                     {% endfor %}
                   {% endif %}
-                         
+                     
             </div>
-          
-              <input type="submit" class="btn btn-warning pull-right btn-lg" value="signup"  />
-            
-            
+                  <input type="submit" class="btn btn-warning pull-right btn-lg" value="signup"  />                      
         </form>
       </div>
       <br><br>
         <nav class="navbar ">
           <div class="container-fluid">
              <div class="navbar-header navbar-left">
-                
-             </div>
+              </div>
           </div>
-        </nav>
-  
+        </nav>  
 </body>
 </html>
 
