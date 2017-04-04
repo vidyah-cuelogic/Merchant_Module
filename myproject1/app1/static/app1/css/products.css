@@ -1,39 +1,39 @@
-.row
-{
-	padding-top: 30px;
+.row {
+    padding-top: 30px;
 }
- .glyphicon-ok-sign
-{
-  color: #23aa3c; 
-  font-size: 15px;
-  margin-left: 10px;
-}
- .glyphicon-remove-sign ,.glyphicon-trash,.glyphicon-edit
-{
-  color: #d63e3e; 
-  font-size: 15px;
-  margin-left: 10px;
-}
-button
-{
-    color: white;
-    background-color:#32463f;   
-}
-.color.btn.btn-banner{
-    
-    border-color: rgba(255,255,255,0.6);
-    transition-duration: 0.55s;
 
-}    
-.color.btn.btn-banner:hover{
-    border-color: rgba(255,255,255,0);
-    background-color:#141c19;
-    font-weight: 400px;
-    color:white;   
+.glyphicon-ok-sign {
+    color: #23aa3c;
+    font-size: 15px;
+    margin-left: 10px;
 }
-table{
-	background-color: white;
-	}
-thead tr th{
-	color:#688a7e;	
+
+.glyphicon-remove-sign,
+.glyphicon-trash,
+.glyphicon-edit {
+    color: #d63e3e;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.color.btn.btn-banner {
+    color: white;
+    background-color: #32463f;
+    border-color: rgba(255, 255, 255, 0.6);
+    transition-duration: 0.55s;
+}
+
+.color.btn.btn-banner:hover {
+    border-color: rgba(255, 255, 255, 0);
+    background-color: #141c19;
+    font-weight: 400px;
+    color: white;
+}
+
+table {
+    background-color: white;
+}
+
+thead tr th {
+    color: #688a7e;
 }

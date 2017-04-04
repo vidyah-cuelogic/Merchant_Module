@@ -3,85 +3,86 @@
         margin-top: 50px;
     }
 }
-body
-{
-   background-color: #eeeeee;
 
+body {
+    background-color: #eeeeee;
 }
-.logo{
-  width: 172px;
-  height: 40px; 
+
+.logo {
+    width: 172px;
+    height: 40px;
 }
-header>nav{  
-  background-color: #15221e; 
+
+header>nav {
+    background-color: #15221e;
 }
-aside>nav{  
-  background-color: #1f2f2a; 
+
+aside>nav {
+    background-color: #1f2f2a;
 }
-.down{
+
+.down {
     padding-top: 10px;
 }
-header li a, aside li a
-{   
-    
-    color:white;
+
+header li a,
+aside li a {
+    color: white;
     font-size: 15px;
 }
-ul
-{
-    list-style-type:none;
+
+ul {
+    list-style-type: none;
 }
-ul #demo{
+
+ul #demo {
     padding-left: 0px;
 }
-ul  #demo  li a{
-    display:block;
-    padding:15px 0 15px 40px;
+
+ul #demo li a {
+    display: block;
+    padding: 15px 0 15px 40px;
 }
-a:focus, a:hover {
+
+a:focus,
+a:hover {
     color: white;
     text-decoration: none;
 }
-.navbar{
-  margin-bottom:0;
-  min-height: 40px;
+
+.navbar {
+    margin-bottom: 0;
+    min-height: 40px;
 }
+
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 40px;        
-        width: 200px;        
+        top: 40px;
+        width: 200px;
         background-color: #32463f;
-        bottom: 0; 
-
-        
+        bottom: 0;
     }
-.side-nav>li>a 
-{
-    width: 200px;
-    border-bottom: 0.5px solid #688a7e;    
+    .side-nav>li>a {
+        width: 200px;
+        border-bottom: 0.5px solid #688a7e;
+    }
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        color: #b6b224;
+        border-left: 2px solid #b6b224;
+        background-color: #202f2a;
+    }
+    .dropdown-menu {
+        background-color: #32463f;
+    }
+    .dropdown-menu li a {
+        color: white;
+    }
 }
 
-.side-nav li a:hover,
-.side-nav li a:focus 
-{
-    color:#b6b224;
-    border-left: 2px solid #b6b224;
-    background-color: #202f2a;        
-}
-.dropdown-menu{      
-    background-color: #32463f;
-}
-.dropdown-menu li a {      
-    color:white;
-}
-
-}
 @media(min-width:768px) {
-section
-{
-    padding-left:220px; 
-
+    section {
+        padding-left: 220px;
+    }
 }
-}
-

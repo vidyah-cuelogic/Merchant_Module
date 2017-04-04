@@ -3,8 +3,7 @@ from . import views
 from django.contrib import auth
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import logout
-urlpatterns = [
-    
+urlpatterns = [    
     url(r'^$', views.home, name='home'),    
     url(r'^register/$', views.register, name='register'),
     url(r'^login_view/$', views.login_view, name='login_view'),
@@ -14,6 +13,3 @@ urlpatterns = [
     url(r'^dashboard/products/$', views.products, name='products'),
     url(r'^dashboard/products/create_product/$', views.create_product, name='create_product'),
 ]
-
-
-

@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">   
-
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap-theme.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}">
@@ -21,7 +20,6 @@
   <link rel="stylesheet" type="text/css" href="{% static 'app1/css/colorPicker.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base1.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/css/create_product.css' %}">
-
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
   <title> Login page</title>
@@ -43,7 +41,6 @@
                       {{request.user.first_name}} {{request.user.last_name}}
                       <span class="glyphicon glyphicon-menu-down"></span>
                   </a> 
-
                   <ul class="dropdown-menu">
                         <li>
                             <a href="#"><span class="glyphicon glyphicon-user"></span>Profile</a>
@@ -59,13 +56,11 @@
                             <a href="/app1/logout/" class="glyphicon glyphicon-power-off"></span> Log Out</a>
                         </li>
                     </ul>
-
                 </li>
               </ul>                        
         </div>      
       </nav>
     </header>
-
     <aside>
       <ul class="nav navbar-nav side-nav">
                     <li>
@@ -93,8 +88,7 @@
                             <li>
                                 <a href="#"><span class="glyphicon glyphicon-charts">
                                 </span> Trend</a>
-                            </li>
-                        
+                            </li>                        
                         </ul>
                     </li>
                     <li>
@@ -103,12 +97,11 @@
                     </li>
                 </ul>
     </aside>
-
     <section>
         <div class="row">
             <form class="form-horizontal" id="myform" method="post" >{%csrf_token%}
                 <div class="col-md-6">
-                  <div class="form-group">                      
+                  <div class="form-group">                     
                       <label class="col-md-4 control-label "><label class=" red ">{% if form.product_name.field.required %} *{% endif %}</label>{{ form.product_name.label_tag }}</label>
                       <div class="col-md-8">
                         {{form.product_name}}
@@ -253,13 +246,11 @@
         <hr>
         <div class="row">
           <div class="col-md-3 col-md-offset-9 pull-right">
-              <button type="button" class="btn btn-default" >Cancle</button>
-              
+              <button type="button" class="btn btn-default" >Cancle</button>            
               
           </div>
         </div>
     </section>
  </div>        
-
 </body>
 </html>

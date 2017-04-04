@@ -13,14 +13,13 @@ SUBSCRIPTION_TYPE_CHOICE = (
                         ('Yearly', 'Yearly'),
                         ('Trial', 'Trial')
                         )
-class Merchants(models.Model):
-    
+
+class Merchants(models.Model):    
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     sub_status = models.BooleanField(default=True)
     subscription_type=models.CharField(max_length=10,
                                         choices = SUBSCRIPTION_TYPE_CHOICE,
                                         default='Trial')
-
 class Products(models.Model):
     product_name=models.CharField(max_length=100,unique=True)
     uploaded_on=models.DateTimeField(default=datetime.now, blank=True)
@@ -61,12 +60,10 @@ class Product_color_images(models.Model):
     images = models.ImageField(blank=True)
     product_images=models.ForeignKey(Products)    
 
-
 class emailverify(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     activation_key = models.CharField(max_length=50)
     registration_time= models.DateTimeField(default=datetime.now, blank=True)
-
     def is_registered_recently(self):
          cur_time = timezone.now()
          return cur_time - datetime.timedelta(days=1) <= self.pub_date <= cur_time

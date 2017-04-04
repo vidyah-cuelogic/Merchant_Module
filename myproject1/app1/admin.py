@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Merchants,emailverify,Products,Categories,Product_Category,Offers,Product_color_images,Merchant_Products
-# Register your models here.
 admin.site.register(Merchants)
 admin.site.register(emailverify)
 admin.site.register(Products)

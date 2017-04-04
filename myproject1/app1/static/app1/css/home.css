@@ -1,20 +1,16 @@
-
-a:hover , a:focus{
-  text-decoration: none;
-} 
-.center{
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+.center {
     margin-top: 5%;
     margin-bottom: 15%;
-    
 }
-
-.title
-{
-  font-family:"Source Sans Pro";
-  padding-left: 10%;
-  padding-top: 10%;
-
+.title {
+    font-family: "Source Sans Pro";
+    padding-left: 10%;
+    padding-top: 10%;
 }
-.boy{
-	margin-top: 25%;
+.boy {
+    margin-top: 25%;
 }
