@@ -1,0 +1,80 @@
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+body {
+    background-image: url("/static/app1/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+b{
+    font-size: 20px;
+    color: white;
+}
+.downplz{
+margin-top: 10px;
+}
+#wrapper {
+    padding-left: 0;
+}
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+.navbar
+{
+  background-color:#32463f ;  
+}
+.navbar ul li a
+{    
+    color: white;
+    font-size: 20px;
+}
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 50px;
+        left: 225px;
+        width: 200px;
+        margin-left: -225px;        
+        border-radius: 0;
+        overflow-y: auto;        
+        background-color: #32463f;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;        
+    }
+    .side-nav>li>a {
+        width: 225px;
+    }
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        color:#32463f;
+        background-color: white;        
+    }
+}
+.side-nav>li>ul {
+    padding: 0;
+}
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+.dropdown-menu {
+    float: left;
+    position: absolute;    
+    background-color: #32463f;
+}
+
