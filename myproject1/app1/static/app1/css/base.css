@@ -105,6 +105,6 @@ span:over {
 
 .form-group #displayText .glyphicon {
     position: absolute;
-    top: 2px;
-    left: 40px;
+    top: 20%;
+    left: 95%;
 }

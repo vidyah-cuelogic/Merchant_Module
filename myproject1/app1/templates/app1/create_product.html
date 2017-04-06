@@ -7,20 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
-    
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="{% static 'app1/bootstrap/js/bootstrap.min.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/colorPicker.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base1.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/create_product.css' %}">
-    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/notify.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/color_picker.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/product_validation.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/upload_img.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/storedata.js' %}"></script>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
     <title> Login page</title>
 </head>
 
@@ -96,6 +88,14 @@
             </ul>
         </aside>
         <section>
+         <div id="error-message"></div>
+        {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
             <div class="row">
                 <form class="form-horizontal" id="myform" method="post">{%csrf_token%}
                     <div class="col-md-6">
@@ -107,19 +107,17 @@
                             </div>
                         </div>
                         <div class="form-group">
+
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.category.field.required %} *{% endif %}</label>
                                 {{ form.category.label_tag }}</label>
                             <div class="col-md-8">
-                                <select id="first" name="category" class="form-control">
+                                <select id="first" name="category" class="form-control" >
                                     <option></option>
-                                    {%for cat in categories%}
+                                    <!-- {%for cat in categories%}
                                     <option>{{cat.category}}</option>
-                                    {%endfor%}
+                                    {%endfor%} -->
                                 </select>
-                                <div id="display"></div>
-                                <!--                       
-                        {{form.category}} -->
                             </div>
                         </div>
                         <div class="form-group">
@@ -127,7 +125,7 @@
                                 <label class=" red ">{% if form.offer.field.required %} *{% endif %}</label>
                                 {{ form.offer.label_tag }}</label>
                             <div class="col-md-8">
-                                <select name="offer" class="form-control">
+                                <select name="offer" class="form-control" >
                                     <option></option>
                                     {%for offer in offers%}
                                     <option>{{offer.offer_title}}</option>
@@ -147,8 +145,11 @@
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.product_cost.field.required %} *{% endif %}</label>
                                 {{ form.product_cost.label_tag }}</label>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 {{form.product_cost}}
+                            </div>
+                            <div class="col-xs-1">
+                                <b>INR</b>
                             </div>
                         </div>
                         <div class="form-group">
@@ -156,14 +157,9 @@
                                 <label class=" red "> </label>Available color</label>
                             <div class="col-md-3">
                                 <div class="input-group">
-                                    <input id="color1" class="controlset" type="text" name="color1" value="#333399" required=False />
-                                    <span class="input-group-addon "><span class="glyphicon glyphicon-plus"> </span></span>
+                                    <input id="color1" class="controlset" type="text" value="#333399" required=False />
                                 </div>
-                                <div id="colors"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div id="display_color">
+                                <div id="colors_list"></div>
                             </div>
                         </div>
                     </div>
@@ -172,7 +168,7 @@
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.material_details.field.required %} *{% endif %}</label>
                                 {{ form.material_details.label_tag }}</label>
-                            <div class="col-md-5 ">
+                            <div class="col-md-8 ">
                                 {{form.material_details}}
                             </div>
                         </div>
@@ -188,8 +184,11 @@
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.deliver_charges.field.required %} *{% endif %}</label>
                                 {{ form.deliver_charges.label_tag }}</label>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 {{form.deliver_charges}}
+                            </div>
+                            <div class="col-xs-1">
+                                <b>INR</b>
                             </div>
                         </div>
                         <div class="form-group">
@@ -215,69 +214,33 @@
                                 {{form.return_within}}
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="pull-right">
-                                <button type="button" class="color btn-banner btn " data-toggle="modal" data-target="#myModal">Add Images</button>
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Image Upload</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">
-                            <label class=" red "> </label>Available color</label>
-                        <div class="col-md-8">
-                            <div class="input-group">
-                                <select id="selected_colors" name="category" class="form-control">
-                                </select>
+                        
+                        
+                        <div class="row">
+                            <div class="col-md-3 col-md-offset-4 ">
+                                <button  class="color btn-banner btn ">Save</button>                                
+                            </div>
+                            <div class="col-md-3 col-md-offset-1 ">                               
+                                <button type="button" class="btn btn-default">Cancle</button>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">
-                            <label class=" red "> *</label>Select Images</label>
-                        <div class="col-md-8">
-                            <input type="file" name="images[]" id="images" multiple>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div id="image_to_upload">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class=" btnLoadPreviews color btn-banner btn btn-secondary" data-dismiss="modal">Upload</button>
-                </div>
-            </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" class="color btn-banner btn btn-secondary" value="Save" />
                     </div>
                 </form>
             </div>
-            <hr>
-            <div class="row">
-                <div class="box1">
-                    <div id="image_upload">
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-3 col-md-offset-9 pull-right">
-                    <button type="button" class="btn btn-default">Cancle</button>
-                </div>
-            </div>
+            
         </section>
     </div>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+    <script type="text/javascript" src="{% static 'app1/js/product_validation.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.min.js' %}"></script>
     
+    <script type="text/javascript" src="{% static 'app1/js/notify.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app1/js/color_picker.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app1/js/storedata.js' %}"></script>
+    <script type="text/javascript" src="{% static 'app1/js/upload_img.js' %}"></script>
+     
 </body>
 
 </html>

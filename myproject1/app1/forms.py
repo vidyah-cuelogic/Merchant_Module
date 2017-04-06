@@ -31,12 +31,12 @@ class ProductForm(forms.Form):
     category=forms.CharField(label='Category',widget=forms.TextInput(attrs={'class':'form-control'}))
     offer=forms.CharField(required=False,label='Offer',widget=forms.TextInput(attrs={'class':'form-control'}))
     product_specification=forms.CharField(label='Product specification',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
-    product_cost=forms.DecimalField(label='Product cost',widget=forms.NumberInput(attrs={'class':'form-control'}))
+    product_cost=forms.DecimalField(label='Product cost',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
     material_details=forms.CharField(label='Material Details',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
-    quantity=forms.IntegerField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control'}))
-    deliver_charges=forms.DecimalField(label='Delivery Charges',widget=forms.NumberInput(attrs={'class':'form-control'}))
+    quantity=forms.IntegerField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
+    deliver_charges=forms.DecimalField(label='Delivery Charges',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
     return_allowed = forms.TypedChoiceField(
                      choices=YESNO_CHOICES, widget=forms.RadioSelect, coerce=int
                 )
     return_within=forms.CharField(label='Return Within',widget=forms.NumberInput(attrs={'class':'form-control', 'value':0}),required=False)
-   
+    

@@ -15,8 +15,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 from app1.models import (Merchants,emailverify,Products,Categories,
-                        Product_Category,Offers,Product_color_images,
-                        Merchant_Products,Product_offer)
+                        Product_Category,Offers,Product_color,Product_color_images,
+                        Product_offer)
 from app1.forms import SignupForm,LoginForm,ProductForm
 
 def home(request):
@@ -89,39 +89,20 @@ def dashboard(request):
 
 @login_required(login_url='/app1/login_view/')
 def products(request):
+    
     return render(request,"app1/products.html",{})
 
 @login_required(login_url='/app1/login_view/')
 def create_product(request):
+    form=ProductForm()
     if request.method == 'GET':
         form=ProductForm()
-        categories=Categories.objects.all()
-        offers=Offers.objects.all()
-        return render(request,"app1/create_product.html",{'form':form,'categories':categories,'offers':offers})
+        
+        return render(request,"app1/create_product.html",{'form':form})
     if request.method == 'POST':
         data=request.POST;
-        print(data)
         
-        print("product_name= "+data['product_name'])
-        print("quantity= "+data['quantity'])
-        print("product_cost= "+data['product_cost'])
-        print("deliver_charges= "+data['deliver_charges'])
-        print("return_allowed= "+data['return_allowed'])
-        print("return_within= "+data['return_within'])      
-        print("color_list"+str(json.loads(data['color_list'])))
-        print("product_specification= "+data['product_specification'])
-        print("material_details= "+data['material_details'])
         
-        a=Products(product_name=data['product_name'],quantity=data['quantity'],product_cost=data['product_cost'] ,deliver_charges=data['deliver_charges'] ,return_allowed=bool(data['return_allowed']),return_within=data['return_within'],product_speficication=data['product_specification'],material_speficication=data['material_details'])
-        a.save()
-        cat=Categories.objects.get(category=data['category'])
-        b=Product_Category(product=a,product_cat=cat)
-        b.save()
-        if data['offer']:
-            off=Offers.objects.get(offer_title=data['offer'])
-            c=Product_offer(product_id=a,offer_id=off)
-            print(data['offer'])
-            c.save()
 
         return HttpResponse(json.dumps({"success":True, "message":"Data inserted into database successfully"}))            
     return HttpResponse(json.dumps({"success":False, "message":"Data could not be inserted"}))

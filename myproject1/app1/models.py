@@ -19,8 +19,10 @@ class Merchants(models.Model):
     sub_status = models.BooleanField(default=True)
     subscription_type=models.CharField(max_length=10,
                                         choices = SUBSCRIPTION_TYPE_CHOICE,
-
                                         default='Trial')
+    def __str__(self):
+        return str(self.user)
+
 class Offers(models.Model):    
     offer_title=models.CharField(max_length=100)
     offer_type=models.CharField(max_length=100,
@@ -36,7 +38,7 @@ class Offers(models.Model):
     
 
 class Products(models.Model):
-    product_name=models.CharField(max_length=100,unique=True)
+    product_name=models.CharField(max_length=100)
     uploaded_on=models.DateTimeField(default=datetime.now, blank=True)
     quantity=models.IntegerField(default=0)
     product_cost= models.DecimalField(max_digits=20,decimal_places=2,default=Decimal('0.00'))
@@ -45,8 +47,9 @@ class Products(models.Model):
     return_within=models.IntegerField(default=0, blank=True,null=True)
     product_speficication=models.TextField(default=0)
     material_speficication=models.TextField(default=0)
+    merchant=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
-        return self.product_name
+        return self.merchant
 
 class Product_offer(models.Model):
     product_id=models.ForeignKey(Products)
@@ -54,11 +57,7 @@ class Product_offer(models.Model):
     def __str__(self):
         return str(self.product_id)
 
-class Merchant_Products(models.Model):
-    merchant_id = models.ForeignKey(User,on_delete=models.CASCADE)
-    product_id = models.ForeignKey(Products,on_delete=models.CASCADE)
-    def __str__(self):
-        return self.merchant_id
+
 
 class Categories(models.Model):
     category=models.CharField(max_length=100,unique=True)
@@ -73,12 +72,19 @@ class Product_Category(models.Model):
         return str(self.product)
 
 
-class Product_color_images(models.Model):      
-    color_code=models.CharField(max_length=50,default='NULL')
-    images = models.ImageField(blank=True)
-    product_images=models.ForeignKey(Products)
+class Product_color(models.Model):      
+    color=models.CharField(max_length=50,default='NULL')
+    product_color=models.ForeignKey(Products)
     def __str__(self):
-        return self.color_code    
+        return str(self.product_color)   
+
+class Product_color_images(models.Model):
+    images = models.ImageField(blank=True)
+    product_color_img=models.ForeignKey(Product_color)
+    def __str__(self):
+        return self.product_color_img
+
+
 
 class emailverify(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)

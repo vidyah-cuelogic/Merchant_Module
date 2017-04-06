@@ -1,15 +1,6 @@
-function AlertIt() {
-    var answer = confirm("Please click on OK to continue.")
-    if (answer)
-        window.location = "http://www.continue.com";
-}
+key=$('#color1').val();
+            console.log("color key = "+key);
+            color_mapping[key].push(e.target.result);
 
-function toggle() {
-    var ele = document.getElementById("toggleText");
-    var text = document.getElementById("displayText");
-    if (ele.style.display == "block") {
-        ele.style.display = "none";
-    } else {
-        ele.style.display = "block";
-    }
-}
+            color_mapping[template1] = []
+            data['color_mapping'] = color_mapping
