@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+
+   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">  
+ 
+
+ <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base.css' %}">
+
+
+    
+  <title> Login page</title>
+</head>
+<body>
+      <nav class="navbar ">
+          <div class="container-fluid">
+             <div class="navbar-header navbar-left">
+                  <a href="#" id="bottle" onclick="javascript:window.history.back(-1);return false;" >
+                      <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" /> 
+                  </a>                 
+             </div>             
+          </div>
+       </nav> 
+    
+    <div class="container">
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+              {% endfor %}
+          </ul>
+          {% endif %}
+          {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+                </div>
+            {% endfor %}
+          {% endif %}
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4 box1" >       
+            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">     
+             {%csrf_token%}          
+              <div class="panel-title text-center">
+                <h1 >Log In </h1>
+                <hr/>
+              </div>   
+ 
+              <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-user"> </span></span>
+                    {{form.username}}                      
+                  </div>                  
+              </div>            
+              <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon transparent"><span class="glyphicon glyphicon-lock"> </span></span>
+                    {{form.password}}                      
+                  </div>
+              </div>
+              <hr>       
+              <div class="form-group">
+                <div class="pull-right">
+                <a href=""><u>I Forget. Help!</u></a>
+                </div>
+              </div>            
+              <input type="submit" class="down btn-banner btn  btn-lg btn-block" value="Log In"  /> 
+            </form>
+          </div>
+      </div>
+  </div>
+    <nav class="navbar navbar-fixed-bottom">
+          <div class="container-fluid">
+             <div class="navbar-header navbar-right">
+             </div>
+          </div>
+    </nav> 
+ <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}"> 
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script> 
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script type="text/javascript" src="{% static 'app1/js/login_validation.js' %}"></script>
+
+</body>
+</html>

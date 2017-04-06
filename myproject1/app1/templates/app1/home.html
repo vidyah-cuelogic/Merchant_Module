@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">   
+
+   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">  
+
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/css/home.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base.css' %}">
+  
+  <title> Home page</title>
+</head>
+  <body>
+       <nav class="navbar ">
+          <div class="container-fluid">
+             <div class="navbar-header navbar-left">
+                 <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" > 
+             </div>
+             <div class="navbar-header navbar-right">        
+             </div>
+          </div>
+       </nav>      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+              <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class=" title ">
+{{request.user}} {{request.user.id}}
+                              <h1 > Life's too short!! </h1>
+                              <h3>Anyone can make it great with QuickB!zz...</h3>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <a href="register" class="nounderline down1"><button type="button" class=" down btn-banner btn  btn-lg btn-block down1"><span class="glyphicon glyphicon-cloud">
+                        </span> START WEB APP TRIAL </button></a>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class=" down btn btn-default btn-lg  disabled btn-block down1"><span class="glyphicon glyphicon-ok-sign"> </span> SUBSCRIPTION PLAN</button>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <a href="login_view"><button type="button" class="down btn-banner center btn  pull-right ">Log In</button></a>
+              <img class="boy pull-right img-responsive" src="{% static 'app1/images/boy.png' %}" alt="logo" > 
+          </div>
+        </div>
+      </div> 
+
+  <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}">         
+  </body>
+</html>
