@@ -1,9 +1,5 @@
 @media(min-width:768px) {
-section
-{
-    padding-top:50px; 
 
-}
 
 .panel span {
     
@@ -18,11 +14,7 @@ section
 }
 }
 @media(max-width:768px) {
-section
-{
-    padding-top:25px; 
 
-}
 
 .panel span {
     

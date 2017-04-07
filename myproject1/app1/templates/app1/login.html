@@ -30,13 +30,15 @@
           {% if messages %}
           <ul class="messages">
               {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
+                  <div class="alert alert-danger text-center">
+                  <strong>{{ message }}</strong>
+                </div>
               {% endfor %}
           </ul>
           {% endif %}
           {% if form.non_field_errors %}
             {% for error in form.non_field_errors %}
-              <div class="alert alert-danger">
+              <div class="alert alert-danger text-center">
                 <strong>{{ error|escape }}</strong>
                 </div>
             {% endfor %}

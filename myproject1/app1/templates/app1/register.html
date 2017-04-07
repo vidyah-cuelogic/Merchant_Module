@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap-theme.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'app1/bootstrap/css/bootstrap.min.js' %}">
 
 <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base.css' %}">
@@ -34,15 +33,15 @@
       <div class="container">
             {% if form.non_field_errors %}
               {% for error in form.non_field_errors %}
-                <div class="alert alert-danger">
+                <div class="alert alert-danger text-center">
                   <strong>{{ error|escape }}</strong>
                 </div>
               {% endfor %}
             {% endif %}
         <div class="row">
           <div class="col-md-4 col-md-offset-4 box1" >       
-            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">  
-             {%csrf_token%}          
+            <form class="form-horizontal" method="post" action="" id="contact_form" data-toggle="validator">{%csrf_token%}    
+                     
               <div class="panel-title text-center ">
                 <h1 >User Info</h1>
                 <hr/>

@@ -17,12 +17,17 @@
 .down1 {
     margin-top: 30%;
 }
+.center{
+    margin-top: 5px;
+    margin-right: 10px;
+}
 .size {
     font-size: 18px;
 }
-body{
-   font-size: 18px; 
+input#id_captcha_1{
+    color: black;
 }
+
 .form-group #displayText .glyphicon {
     position: absolute;
     top: 20%;
@@ -36,8 +41,8 @@ body{
 .container {
     margin-top: 5px;
 }
-body{
-   font-size: 12px; 
+.alert{
+  width:200px;
 }
 .form-group {
     padding-left: 5%;
@@ -111,10 +116,6 @@ span .glyphicon-info-sign {
     position: relative;
 }
 
-
-
-
-
 .btn {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
@@ -123,8 +124,12 @@ span .glyphicon-info-sign {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: rgba(255, 255, 255, 0.6);
     transition-duration: 0.55s;
+    font-size: 15px;
+    
 }
-
+.down .btn .btn-default{
+    font-size: 15px;
+}
 .down.btn.btn-banner:hover {
     border-color: rgba(255, 255, 255, 0);
     background-color: #141c19;
@@ -135,5 +140,4 @@ span .glyphicon-info-sign {
 .form-group a {
     color: black;
 }
-
 

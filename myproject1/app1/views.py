@@ -89,7 +89,12 @@ def dashboard(request):
 
 @login_required(login_url='/app1/login_view/')
 def products(request):
-    return render(request,"app1/products.html",{})
+    # return render(request,"app1/products.html",{})
+    user=User.objects.get(username=request.user)
+    products=Products.objects.filter(merchant=user)
+    product_category=Product_Category.objects.all()
+    return render(request,"app1/products.html",{'products':products,'product_category':product_category})
+
 
 @login_required(login_url='/app1/login_view/')
 def create_product(request):
@@ -101,11 +106,12 @@ def create_product(request):
         return render(request,"app1/create_product.html",{'form':form,'categories':categories,'offers':offers})
     if request.method == 'POST':
         data=request.POST;
+        print(data['return_allowed'])
         user=User.objects.get(username=request.user)        
         if Products.objects.filter(product_name=data['product_name']).count()>0:
             return HttpResponse(json.dumps({"success":False, "message":"This product already exists, try another product name"})) 
-             
-        a=Products(merchant=user,product_name=data['product_name'],quantity=data['quantity'],product_cost=data['product_cost'] ,deliver_charges=data['deliver_charges'] ,return_allowed=bool(data['return_allowed']),return_within=data['return_within'],product_speficication=data['product_specification'],material_speficication=data['material_details'])
+
+        a=Products(merchant=user,product_name=data['product_name'],quantity=data['quantity'],product_cost=data['product_cost'] ,deliver_charges=data['deliver_charges'] ,return_allowed=bool(int(data['return_allowed'])),return_within=data['return_within'],product_speficication=data['product_details'],material_speficication=data['material_details'])
         a.save()
         cat=Categories.objects.get(category=data['category'])
         b=Product_Category(product=a,product_cat=cat)
@@ -117,8 +123,7 @@ def create_product(request):
         if data['offer']:
             off=Offers.objects.get(offer_title=data['offer'])
             d=Product_offer(product_id=a,offer_id=off)
-            d.save()
-    
+            d.save()   
         
 
         return HttpResponse(json.dumps({"success":True, "message":"Data inserted into database successfully"}))            

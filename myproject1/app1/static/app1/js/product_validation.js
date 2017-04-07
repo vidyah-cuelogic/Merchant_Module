@@ -7,6 +7,11 @@ $(document).ready(function() {
                     validators: {
                         notEmpty: {
                             message: 'Field is required '
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 150,
+                            message: 'Product name should have at least two character maximum 150 character'
                         }
                     }
                 },
@@ -17,10 +22,15 @@ $(document).ready(function() {
                         }
                     }
                 },
-                product_specification: {
+                product_details: {
                     validators: {
                         notEmpty: {
                             message: 'Field is required'
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 500,
+                            message: 'Product details should have at least two character maximum 1000 character'
                         }
                     }
                 },
@@ -28,6 +38,11 @@ $(document).ready(function() {
                     validators: {
                         notEmpty: {
                             message: 'Field is required'
+                        },
+                        numeric: {
+                            
+                            decimalSeparator: '.',
+                            message: 'The value is not a number'
                         }
                         
                     }
@@ -36,6 +51,11 @@ $(document).ready(function() {
                     validators: {
                         notEmpty: {
                             message: 'Field is required'
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 1000,
+                            message: 'Product name should have at least two character maximum 100 character'
                         }
                     }
                 },
@@ -50,6 +70,11 @@ $(document).ready(function() {
                     validators: {
                         notEmpty: {
                             message: 'Field is required'
+                        },
+                        numeric: {
+                            
+                            decimalSeparator: '.',
+                            message: 'The value is not a number'
                         }
                         
                     }
@@ -58,6 +83,8 @@ $(document).ready(function() {
             }
         })
         .on('success.form.bv', function(e) {
+
+
             $('#success_message').slideDown({ opacity: "show" }, "slow")
             $('#myform').data('bootstrapValidator').resetForm();
             e.preventDefault();
@@ -66,6 +93,7 @@ $(document).ready(function() {
             $.post($form.attr('action'), $form.serialize(), function(result) {
                 console.log(result);
             }, 'json');
+
         });
 });
 

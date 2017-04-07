@@ -6,50 +6,59 @@
         position: fixed;
         top: 40px;
         width: 200px;
-        
     }
-    
     section {
-        padding-top: 50px;
+        padding-top: 15px;
         padding-left: 200px;
     }
-    .back_form{
-    margin: 15px;
-    height: 480px;
-    }
-    .breadcrumb{
+    .breadcrumb {
         margin-right: 15px;
         margin-left: 15px;
-    }
-    .bottom_right{
-        margin-top: 60px;
+        background-color: #ffffff;
     }
 }
+
 @media(max-width:768px) {
-
-
-
-}
     .side-nav {
-        background-color: #32463f;
-        bottom: 0;
+        position: relative;
+        top: 40px;
+        width: 100%;
     }
-    .side-nav>li>a {
-        width: 200px;
-        border-bottom: 0.5px solid #22463f;
+    section {
+        padding-top: 50px;
+        padding-left: 20px;
     }
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        color: #b6b224;
-        border-left: 2px solid #b6b224;
-        background-color: #202f2a;
-    }
-    .dropdown-menu {
-        background-color: #32463f;
-    }
-    .dropdown-menu li a {
-        color: white;
-    }
+}
+
+.container-fluid .row {
+    padding: 15px;
+}
+
+.side-nav {
+    background-color: #32463f;
+    bottom: 0;
+}
+
+.side-nav>li>a {
+    width: 200px;
+    border-bottom: 0.5px solid #375047;
+}
+
+.side-nav li a:hover,
+.side-nav li a:focus {
+    color: #b6b224;
+    border-left: 2px solid #b6b224;
+    background-color: #202f2a;
+}
+
+.dropdown-menu {
+    background-color: #32463f;
+}
+
+.dropdown-menu li a {
+    color: white;
+}
+
 body {
     background-color: #eeeeee;
 }
@@ -102,25 +111,17 @@ a:hover {
     min-height: 40px;
 }
 
-.breadcrumb  li a:hover,
-.breadcrumb  li a:focus{
-    color:black;
+.breadcrumb li a:hover,
+.breadcrumb li a:focus {
+    color: black;
 }
-.row .create_button{
+
+.row .create_button {
     position: relative;
-    top:5px;
+    top: 5px;
+    padding: 0px;
+    margin: 0px;
 }
-
-.back_form{
-    background-color: #ffffff;
-    
-}
-
-#cancel{
-    background-color: gray;
-   margin-right: 50px;
-}
-.form-group .control-label{
-    padding-left: 2px;
-    text-align: left;
+input #id_captcha_1{
+    color: black;
 }

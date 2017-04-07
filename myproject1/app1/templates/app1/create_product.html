@@ -140,45 +140,6 @@
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">
-                                <label class=" red ">{% if form.product_specification.field.required %} *{% endif %}</label>
-                                {{ form.product_specification.label_tag }}</label>
-                            <div class="col-md-8">
-                                {{form.product_specification}}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">
-                                <label class=" red ">{% if form.product_cost.field.required %} *{% endif %}</label>
-                                {{ form.product_cost.label_tag }}</label>
-                            <div class="col-md-6">
-                                {{form.product_cost}}
-                            </div>
-                            <div class="col-xs-1">
-                                <b>INR</b>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">
-                                <label class=" red "> </label>Available color</label>
-                            <div class="col-md-3">
-                                <div class="input-group">
-                                    <input id="color1" class="controlset" type="text" value="#333399" required=False />
-                                </div>
-                                <div id="colors_list"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">
-                                <label class=" red ">{% if form.material_details.field.required %} *{% endif %}</label>
-                                {{ form.material_details.label_tag }}</label>
-                            <div class="col-md-8 ">
-                                {{form.material_details}}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.quantity.field.required %} *{% endif %}</label>
                                 {{ form.quantity.label_tag }}</label>
                             <div class="col-md-8">
@@ -194,6 +155,47 @@
                             </div>
                             <div class="col-xs-1">
                                 <b>INR</b>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <label class=" red ">{% if form.product_cost.field.required %} *{% endif %}</label>
+                                {{ form.product_cost.label_tag }}</label>
+                            <div class="col-md-7">
+                                {{form.product_cost}}
+                            </div>
+                            <div class="col-xs-1">
+                                <b>INR</b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <label class=" red "> </label>Available color</label>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input id="color1" class="controlset" type="text" value="#333399" required=False />
+                                </div>
+                                 Selected colors:
+                                <div id="colors_list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <label class=" red ">{% if form.material_details.field.required %} *{% endif %}</label>
+                                {{ form.material_details.label_tag }}</label>
+                            <div class="col-md-8 ">
+                                {{form.material_details}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">
+                                <label class=" red ">{% if form.product_details.field.required %} *{% endif %}</label>
+                                {{ form.product_details.label_tag }}</label>
+                            <div class="col-md-8">
+                                {{form.product_details}}
                             </div>
                         </div>
                         <div class="form-group">
@@ -218,17 +220,21 @@
                             <div class="col-md-8">
                                 {{form.return_within}}
                             </div>
+                        </div>                     
+                      
+                            
+                        
                         </div>
-                        
-                        
-                        <div class="bottom_right row pull-right ">
-                            <div class="col-md-3 col-md-offset-4 ">
-                                <button  class="color btn-banner btn ">Save</button>                                
+                    <div class="row bottom_right">
+
+                        <div class=" col-md-1 col-md-offset-10">
+                            
+                                <a href="{% url 'products' %}"><button  class="color btn-banner btn ">Save</button></a>                                
                             </div>
-                            <div class="col-md-3 col-md-offset-1 "> 
+                            <div class="col-md-1 "> 
                                  <a href="{% url 'products' %}" class="btn btn-default" id="cancel" "/>Cancel</a>       
                             </div>
-                        </div>
+                    </div>
                     </div>
                 </form>
                
