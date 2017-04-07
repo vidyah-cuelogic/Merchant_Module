@@ -111,6 +111,3 @@ $(document).ready(function() {
             }, 'json');
         });
 });
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})

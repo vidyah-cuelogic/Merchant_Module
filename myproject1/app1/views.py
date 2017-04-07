@@ -89,7 +89,6 @@ def dashboard(request):
 
 @login_required(login_url='/app1/login_view/')
 def products(request):
-    
     return render(request,"app1/products.html",{})
 
 @login_required(login_url='/app1/login_view/')
@@ -97,11 +96,29 @@ def create_product(request):
     form=ProductForm()
     if request.method == 'GET':
         form=ProductForm()
-        
-        return render(request,"app1/create_product.html",{'form':form})
+        categories=Categories.objects.all()
+        offers=Offers.objects.all()
+        return render(request,"app1/create_product.html",{'form':form,'categories':categories,'offers':offers})
     if request.method == 'POST':
         data=request.POST;
-        
+        user=User.objects.get(username=request.user)        
+        if Products.objects.filter(product_name=data['product_name']).count()>0:
+            return HttpResponse(json.dumps({"success":False, "message":"This product already exists, try another product name"})) 
+             
+        a=Products(merchant=user,product_name=data['product_name'],quantity=data['quantity'],product_cost=data['product_cost'] ,deliver_charges=data['deliver_charges'] ,return_allowed=bool(data['return_allowed']),return_within=data['return_within'],product_speficication=data['product_specification'],material_speficication=data['material_details'])
+        a.save()
+        cat=Categories.objects.get(category=data['category'])
+        b=Product_Category(product=a,product_cat=cat)
+        b.save()
+        for color in json.loads(data['color_list']):
+            print(color)
+            c=Product_color(product_color=a,color=color)
+            c.save()
+        if data['offer']:
+            off=Offers.objects.get(offer_title=data['offer'])
+            d=Product_offer(product_id=a,offer_id=off)
+            d.save()
+    
         
 
         return HttpResponse(json.dumps({"success":True, "message":"Data inserted into database successfully"}))            

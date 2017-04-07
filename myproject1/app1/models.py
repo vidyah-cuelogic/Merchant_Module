@@ -49,7 +49,7 @@ class Products(models.Model):
     material_speficication=models.TextField(default=0)
     merchant=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
-        return self.merchant
+        return self.product_name
 
 class Product_offer(models.Model):
     product_id=models.ForeignKey(Products)
@@ -84,7 +84,7 @@ class Product_color_images(models.Model):
     def __str__(self):
         return self.product_color_img
 
-
+ 
 
 class emailverify(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
