@@ -2,6 +2,8 @@ a:hover,
 a:focus {
     text-decoration: none;
 }
+
+@media(min-width:768px) {
 .center {
     margin-top: 5%;
     margin-bottom: 15%;
@@ -13,4 +15,27 @@ a:focus {
 }
 .boy {
     margin-top: 25%;
+}
+button .down .btn-banner .btn  .btn-lg .btn-block .down1{
+	font-size: 50px;
+}
+	}
+@media(max-width:768px) {
+
+	.center {
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+.title {
+    font-family: "Source Sans Pro";
+    padding-left: 10%;
+    padding-top: 10%;
+}
+.boy {
+    margin-top: 10%;
+}
+button .down .btn-banner .btn  .btn-lg .btn-block .down1{
+	font-size: 5px;
+}
+
 }

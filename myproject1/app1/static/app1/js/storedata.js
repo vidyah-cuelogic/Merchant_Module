@@ -1,6 +1,6 @@
 var colors = [];
 var images = [];
-var color_mapping = {};
+
 
 
 $(function() {
@@ -13,7 +13,7 @@ $(function() {
                 '</button></div>');
 
             console.log("ID: " + id + " has been changed to " + newValue);
-            color_mapping[template1] = []
+            
 
             console.log(color_mapping);
             $('.close').on('click', function() {
@@ -35,7 +35,6 @@ $("#myform").submit(function(e) {
     e.preventDefault();
     formdata = new FormData(this);
     selected_cat = $('#first').val();
-    formdata.append('category', selected_cat);
     formdata.append('color_list', JSON.stringify(colors));
     $.ajax({
         type: "POST",
