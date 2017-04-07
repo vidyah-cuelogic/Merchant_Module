@@ -3,44 +3,55 @@
         padding-top: 50px;
     }
 }
+
 .panel .panel-success .heading {
     background-color: #15221e;
 }
+
 .panel {
     width: 100%;
 }
+
 .panel span {
     padding-top: 10%;
     padding-left: 40%;
 }
+
 .panel p {
     font-size: 20px;
     padding-left: 30%;
 }
+
 .first {
     background-color: lightblue;
     height: 100px;
 }
+
 .second {
     background-color: lightpink;
     height: 100px;
 }
+
 .third {
     background-color: lightgreen;
     height: 100px;
 }
+
 .fourth {
     background-color: lightgray;
     height: 100px;
 }
+
 .panel .glyphicon {
     font-size: 30px;
 }
+
 a:focus,
 a:hover {
     color: white;
     text-decoration: none;
 }
+
 .panel-content {
     padding: 10px 10px 10px 10px;
 }

@@ -66,7 +66,4 @@ class emailverify(models.Model):
     registration_time= models.DateTimeField(default=datetime.now, blank=True)
     def is_registered_recently(self):
          cur_time = timezone.now()
-         return cur_time - datetime.timedelta(days=1) <= self.pub_date <= cur_time
-    
-    
-
+         return cur_time - datetime.timedelta(days=1) <= self.pub_date <= cur_time  
