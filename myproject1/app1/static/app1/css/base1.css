@@ -6,6 +6,31 @@
         position: fixed;
         top: 40px;
         width: 200px;
+        
+    }
+    
+    section {
+        padding-top: 50px;
+        padding-left: 200px;
+    }
+    .back_form{
+    margin: 15px;
+    height: 480px;
+    }
+    .breadcrumb{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .bottom_right{
+        margin-top: 60px;
+    }
+}
+@media(max-width:768px) {
+
+
+
+}
+    .side-nav {
         background-color: #32463f;
         bottom: 0;
     }
@@ -25,23 +50,6 @@
     .dropdown-menu li a {
         color: white;
     }
-    section {
-        padding-top: 50px;
-        padding-left: 200px;
-    }
-    .back_form{
-    margin: 15px;
-    height: 480px;
-    }
-    .breadcrumb{
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-    .bottom_right{
-        margin-top: 60px;
-    }
-}
-
 body {
     background-color: #eeeeee;
 }
@@ -105,10 +113,12 @@ a:hover {
 
 .back_form{
     background-color: #ffffff;
+    
 }
 
 #cancel{
     background-color: gray;
+   margin-right: 50px;
 }
 .form-group .control-label{
     padding-left: 2px;

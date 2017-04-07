@@ -4,13 +4,7 @@ section
     padding-top:50px; 
 
 }
-}
 
-.panel
-{
-    width: 100%;
-    height: 100px;
-}
 .panel span {
     
     padding-top: 10%;
@@ -22,6 +16,29 @@ section
     padding-left: 30%;
 
 }
+}
+@media(max-width:768px) {
+section
+{
+    padding-top:25px; 
+
+}
+
+.panel span {
+    
+    
+    padding-left: 10%;
+    
+}
+
+.panel p{
+    font-size:10px;
+
+    padding-left: 10%;
+
+}
+}
+
 .first
 {   
     background-color: lightblue;
@@ -46,4 +63,6 @@ section
     font-size: 30px;
 }
 
-
+.panel .panel-content{
+    padding: 10px;
+}
