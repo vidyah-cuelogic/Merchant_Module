@@ -22,7 +22,7 @@
             <nav class="navbar navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a href="#" id="bottle" onclick="javascript:window.history.back(-1);return false;">
+                        <a href="/app1/dashboard/" id="bottle" >
                             <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" />
                         </a>
                     </div>
@@ -88,6 +88,11 @@
             </ul>
         </aside>
         <section>
+         <ol class="breadcrumb">
+  <li><a href="/app1/dashboard/">Home</a></li>
+  <li><a href="/app1/dashboard/products/">Products</a></li>
+  <li class="active">Create</li>
+</ol>
          <div id="error-message"></div>
         {% if messages %}
           <ul class="messages">
@@ -96,7 +101,7 @@
               {% endfor %}
           </ul>
           {% endif %}
-            <div class="row">
+            <div class="row back_form">
                 <form class="form-horizontal" id="myform" method="post">{%csrf_token%}
                     <div class="col-md-6">
                         <div class="form-group">
@@ -216,12 +221,12 @@
                         </div>
                         
                         
-                        <div class="row">
+                        <div class="bottom_right row pull-right ">
                             <div class="col-md-3 col-md-offset-4 ">
                                 <button  class="color btn-banner btn ">Save</button>                                
                             </div>
-                            <div class="col-md-3 col-md-offset-1 ">                               
-                                <button type="button" class="btn btn-default">Cancle</button>
+                            <div class="col-md-3 col-md-offset-1 "> 
+                                 <a href="{% url 'products' %}" class="btn btn-default" id="cancel" "/>Cancel</a>       >
                             </div>
                         </div>
                     </div>
