@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/colorPicker.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/base1.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'app1/css/create_product.css' %}">
-
     <title> Login page</title>
 </head>
 
@@ -22,7 +21,7 @@
             <nav class="navbar navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a href="/app1/dashboard/" id="bottle" >
+                        <a href="/app1/dashboard/" id="bottle">
                             <img class="logo" src="{% static 'app1/images/logonew.png' %}" alt="logo" />
                         </a>
                     </div>
@@ -88,20 +87,20 @@
             </ul>
         </aside>
         <section>
-         <ol class="breadcrumb">
-  <li><a href="/app1/dashboard/">Home</a></li>
-  <li><a href="/app1/dashboard/products/">Products</a></li>
-  <li class="active">Create</li>
-</ol>
-         <div id="error-message"></div>
-        {% if messages %}
-          <ul class="messages">
-              {% for message in messages %}
+            <ol class="breadcrumb">
+                <li><a href="/app1/dashboard/">Home</a></li>
+                <li><a href="/app1/dashboard/products/">Products</a></li>
+                <li class="active">Create</li>
+            </ol>
+            <div id="error-message"></div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
                 <li class="{{ message.tags }}">{{ message }}</li>
-              {% endfor %}
-          </ul>
-          {% endif %}
-            <div  class="row back_form" >
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <div class="row back_form">
                 <form class="form-horizontal back" id="myform" method="post">{%csrf_token%}
                     <div class="col-md-6">
                         <div class="form-group">
@@ -112,12 +111,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.category.field.required %} *{% endif %}</label>
                                 {{ form.category.label_tag }}</label>
                             <div class="col-md-8">
-                                <select id="first" name="category" class="form-control" >
+                                <select id="first" name="category" class="form-control">
                                     <option></option>
                                     {%for cat in categories%}
                                     <option>{{cat.category}}</option>
@@ -130,7 +128,7 @@
                                 <label class=" red ">{% if form.offer.field.required %} *{% endif %}</label>
                                 {{ form.offer.label_tag }}</label>
                             <div class="col-md-8">
-                                <select name="offer" class="form-control" >
+                                <select name="offer" class="form-control">
                                     <option></option>
                                     {%for offer in offers%}
                                     <option>{{offer.offer_title}}</option>
@@ -157,7 +155,6 @@
                                 <b>INR</b>
                             </div>
                         </div>
-                        
                         <div class="form-group">
                             <label class="col-md-4 control-label">
                                 <label class=" red ">{% if form.product_cost.field.required %} *{% endif %}</label>
@@ -176,7 +173,7 @@
                                 <div class="input-group">
                                     <input id="color1" class="controlset" type="text" value="#333399" required=False />
                                 </div>
-                                 Selected colors:
+                                Selected colors:
                                 <div id="colors_list"></div>
                             </div>
                         </div>
@@ -220,19 +217,16 @@
                             <div class="col-md-8">
                                 {{form.return_within}}
                             </div>
-                        </div>                     
-                      
-                            
-                        
                         </div>
+                    </div>
                     <div class="row bottom_right">
-
                         <div class=" col-md-1 col-md-offset-10">
-                            
-                                <a href="{% url 'products' %}"><button  class="color btn-banner btn ">Save</button></a>                                
-                            </div>
-                            <div class="col-md-1 "> 
-                                 <a href="{% url 'products' %}" class="btn btn-default" id="cancel" "/>Cancel</a>       
+                            <a href="{% url 'products' %}">
+                                <button class="color btn-banner btn ">Save</button>
+                            </a>
+                        </div>
+                        <div class="col-md-1 ">
+                            <a href="{% url 'products' %}" class="btn btn-default" id="cancel" "/>Cancel</a>       
                             </div>
                     </div>
                     </div>
@@ -244,14 +238,14 @@
     </div>
 
     <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
-    <script type="text/javascript" src="{% static 'app1/js/product_validation.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/jquery.colorPicker.min.js' %}"></script>
+    <script type="text/javascript " src="{% static 'app1/js/product_validation.js' %} "></script>
+    <script type="text/javascript " src="{% static 'app1/js/jquery.colorPicker.js' %} "></script>
+    <script type="text/javascript " src="{% static 'app1/js/jquery.colorPicker.min.js' %} "></script>
     
-    <script type="text/javascript" src="{% static 'app1/js/notify.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/color_picker.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/storedata.js' %}"></script>
-    <script type="text/javascript" src="{% static 'app1/js/upload_img.js' %}"></script>
+    <script type="text/javascript " src="{% static 'app1/js/notify.min.js' %} "></script>
+    <script type="text/javascript " src="{% static 'app1/js/color_picker.js' %} "></script>
+    <script type="text/javascript " src="{% static 'app1/js/storedata.js' %} "></script>
+    <script type="text/javascript " src="{% static 'app1/js/upload_img.js' %} "></script>
      
 </body>
 

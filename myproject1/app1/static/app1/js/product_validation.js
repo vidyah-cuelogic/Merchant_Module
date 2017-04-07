@@ -1,7 +1,6 @@
 $(document).ready(function() {
     $('#myform').bootstrapValidator({
-            feedbackIcons: {
-            },
+            feedbackIcons: {},
             fields: {
                 product_name: {
                     validators: {
@@ -40,11 +39,11 @@ $(document).ready(function() {
                             message: 'Field is required'
                         },
                         numeric: {
-                            
+
                             decimalSeparator: '.',
                             message: 'The value is not a number'
                         }
-                        
+
                     }
                 },
                 material_details: {
@@ -72,11 +71,11 @@ $(document).ready(function() {
                             message: 'Field is required'
                         },
                         numeric: {
-                            
+
                             decimalSeparator: '.',
                             message: 'The value is not a number'
                         }
-                        
+
                     }
                 },
 
@@ -96,7 +95,3 @@ $(document).ready(function() {
 
         });
 });
-
-
-
-

@@ -8,21 +8,20 @@ $(function() {
         onColorChange: function(id, newValue) {
             var template1 = newValue;
             colors.push(template1);
-            $('#colors_list').append('<div class="color-tab">' + '<span style="background-color:' + template1 + '; height:16px; width:16px; display:inline-block; margin-right:5px"></span>' + template1 
-                +'</div>');
+            $('#colors_list').append('<div class="color-tab">' + '<span style="background-color:' + template1 + '; height:16px; width:16px; display:inline-block; margin-right:5px"></span>' + template1 + '</div>');
 
             console.log("ID: " + id + " has been changed to " + newValue);
-            
+
 
             console.log(color_mapping);
-            
+
 
             $('#selected_colors').append('<option value=' + template1 + '>' + template1 + '</option>');
         }
     });
     $('.close').on('click', function() {
-                $(this).parent().remove();
-            });
+        $(this).parent().remove();
+    });
 
 
 
@@ -48,8 +47,8 @@ $("#myform").submit(function(e) {
             if (response.success) {
                 $.notify(response.message);
 
-                window.location.href= "/app1/dashboard/products/";
-            } else{
+                window.location.href = "/app1/dashboard/products/";
+            } else {
                 $.notify(response.message);
                 $('#myform')[0].reset();
             }

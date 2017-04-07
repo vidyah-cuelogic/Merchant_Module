@@ -34,7 +34,7 @@ class Offers(models.Model):
     is_active=models.BooleanField(default=True)
     offer_status = models.BooleanField(default=True)
     def __str__(self):
-        return self.offer_title
+        return str(self.offer_title)
     
 
 class Products(models.Model):
@@ -49,7 +49,7 @@ class Products(models.Model):
     material_speficication=models.TextField(default=0)
     merchant=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
-        return self.product_name
+        return str(self.product_name)
 
 class Product_offer(models.Model):
     product_id=models.ForeignKey(Products)
@@ -63,7 +63,7 @@ class Categories(models.Model):
     category=models.CharField(max_length=100,unique=True)
     category_parent=models.CharField(max_length=100,default='NULL')
     def __str__(self):
-        return self.category
+        return str(self.category)
 
 class Product_Category(models.Model):
     product = models.ForeignKey(Products)
@@ -82,7 +82,7 @@ class Product_color_images(models.Model):
     images = models.ImageField(blank=True)
     product_color_img=models.ForeignKey(Product_color)
     def __str__(self):
-        return self.product_color_img
+        return str(self.product_color_img)
 
  
 
@@ -94,7 +94,5 @@ class emailverify(models.Model):
          cur_time = timezone.now()
          return cur_time - datetime.timedelta(days=1) <= self.pub_date <= cur_time
     def __str__(self):
-        return self.username
+        return str(self.username) 
     
-    
-

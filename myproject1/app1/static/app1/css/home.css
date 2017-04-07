@@ -4,37 +4,35 @@ a:focus {
 }
 
 @media(min-width:768px) {
-.center {
-    margin-top: 5%;
-    margin-bottom: 15%;
+    .center {
+        margin-top: 5%;
+        margin-bottom: 15%;
+    }
+    .title {
+        font-family: "Source Sans Pro";
+        padding-left: 10%;
+        padding-top: 10%;
+        font-size: 20px;
+    }
+    .boy {
+        margin-top: 25%;
+    }
+    button .down .btn-banner .btn .btn-lg .btn-block .down1 {
+        font-size: 50px;
+    }
 }
-.title {
-    font-family: "Source Sans Pro";
-    padding-left: 10%;
-    padding-top: 10%;
-    font-size: 20px;
-}
-.boy {
-    margin-top: 25%;
-}
-button .down .btn-banner .btn  .btn-lg .btn-block .down1{
-	font-size: 50px;
-}
-	}
+
 @media(max-width:768px) {
-
-	
-.title {
-    font-family: "Source Sans Pro";
-    padding-left: 10%;
-    padding-top: 10%;
-    font-size: 10px;
-}
-.boy {
-    margin-top: 10%;
-}
-button .down .btn-banner .btn  .btn-lg .btn-block .down1{
-	font-size: 5px;
-}
-
+    .title {
+        font-family: "Source Sans Pro";
+        padding-left: 10%;
+        padding-top: 10%;
+        font-size: 10px;
+    }
+    .boy {
+        margin-top: 10%;
+    }
+    button .down .btn-banner .btn .btn-lg .btn-block .down1 {
+        font-size: 5px;
+    }
 }

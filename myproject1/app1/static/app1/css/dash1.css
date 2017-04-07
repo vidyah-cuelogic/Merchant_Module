@@ -1,60 +1,44 @@
 @media(min-width:768px) {
-
-
-.panel span {
-    
-    padding-top: 10%;
-    padding-left: 40%;
-    
+    .panel span {
+        padding-top: 10%;
+        padding-left: 40%;
+    }
+    .panel p {
+        font-size: 20px;
+        padding-left: 30%;
+    }
 }
-.panel p{
-    font-size:20px;
-    padding-left: 30%;
 
-}
-}
 @media(max-width:768px) {
-
-
-.panel span {
-    
-    
-    padding-left: 10%;
-    
+    .panel span {
+        padding-left: 10%;
+    }
+    .panel p {
+        font-size: 10px;
+        padding-left: 10%;
+    }
 }
 
-.panel p{
-    font-size:10px;
-
-    padding-left: 10%;
-
-}
-}
-
-.first
-{   
+.first {
     background-color: lightblue;
 }
-.second
-{
-    
+
+.second {
     background-color: lightpink;
 }
-.third
-{
 
+.third {
     background-color: lightgreen;
 }
 
-.fourth
-{
-    
+.fourth {
     background-color: lightgray;
 }
+
 .panel .glyphicon {
     font-size: 30px;
 }
 
-.panel .panel-content{
+.panel .panel-content {
     padding: 10px;
 }

@@ -1,64 +1,62 @@
 @media(min-width:768px) {
+    .container {
+        margin-top: 10px;
+    }
+    .box1 {
+        margin-bottom: 30px;
+    }
+    .form-group {
+        padding-left: 9%;
+    }
+    .navbar {
+        margin-bottom: 0;
+        min-height: 40px;
+    }
+    .down1 {
+        margin-top: 30%;
+    }
+    .center {
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+    .size {
+        font-size: 18px;
+    }
+    input#id_captcha_1 {
+        color: black;
+    }
+    .form-group #displayText .glyphicon {
+        position: absolute;
+        top: 20%;
+        left: 95%;
+    }
+}
 
-.container {
-    margin-top: 10px;
-}
-.box1{
-    margin-bottom: 30px;
-
-}
-.form-group {
-    padding-left: 9%;
-}
-.navbar {
-    margin-bottom: 0;
-    min-height: 40px;
-}
-.down1 {
-    margin-top: 30%;
-}
-.center{
-    margin-top: 5px;
-    margin-right: 10px;
-}
-.size {
-    font-size: 18px;
-}
-input#id_captcha_1{
-    color: black;
-}
-
-.form-group #displayText .glyphicon {
-    position: absolute;
-    top: 20%;
-    left: 95%;
-}
-}
 @media(max-width:768px) {
-.down1 {
-    margin-top: 5%;
+    .down1 {
+        margin-top: 5%;
+    }
+    .container {
+        margin-top: 5px;
+    }
+    .alert {
+        width: 200px;
+    }
+    .form-group {
+        padding-left: 5%;
+    }
+    .form-group #displayText .glyphicon {
+        position: absolute;
+        top: 20%;
+        right: 10%;
+    }
 }
-.container {
-    margin-top: 5px;
-}
-.alert{
-  width:200px;
-}
-.form-group {
-    padding-left: 5%;
-}
-.form-group #displayText .glyphicon {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
-}
+
 body {
     background-image: url("/static/app1/images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    
 }
 
 button {
@@ -74,12 +72,9 @@ nav {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-
-
 .box1 {
     padding: 3%;
     background-color: rgba(0, 0, 0, 0.1);
-    
 }
 
 .input-group input {
@@ -90,19 +85,13 @@ nav {
     width: 40px;
 }
 
-
-
 .form-group .input-group input {
     color: black;
 }
 
-
-
 .input-group span .glyphicon {
     color: #107360;
 }
-
-
 
 a {
     border-bottom-color: none;
@@ -125,11 +114,12 @@ span .glyphicon-info-sign {
     border-color: rgba(255, 255, 255, 0.6);
     transition-duration: 0.55s;
     font-size: 15px;
-    
 }
-.down .btn .btn-default{
+
+.down .btn .btn-default {
     font-size: 15px;
 }
+
 .down.btn.btn-banner:hover {
     border-color: rgba(255, 255, 255, 0);
     background-color: #141c19;
@@ -140,4 +130,3 @@ span .glyphicon-info-sign {
 .form-group a {
     color: black;
 }
-

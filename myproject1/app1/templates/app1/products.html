@@ -183,10 +183,10 @@
                                         <a href="#"> <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
-                                {% endfor %} {%endif%} 
-                                {%if products|length == 0 %}
-                                <tr >
-                                    <td colspan="7"><div class="text-center">No records found</div>
+                                {% endfor %} {%endif%} {%if products|length == 0 %}
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="text-center">No records found</div>
                                     </td>
                                 </tr>
                                 {%endif%}

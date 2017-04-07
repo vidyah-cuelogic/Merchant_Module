@@ -1,12 +1,10 @@
 @media(min-width:768px) {
-.bottom_right{
-    margin-bottom: 20px;
-}
-}
-@media(max-width:768px) {
-
+    .bottom_right {
+        margin-bottom: 20px;
+    }
 }
 
+@media(max-width:768px) {}
 
 .row {
     padding-top: 30px;
@@ -16,57 +14,67 @@
 .form-horizontal {
     padding-right: 20px;
 }
-.back_form{
+
+.back_form {
     background-color: #ffffff;
-    
-}
-.back_form{
-    margin: 15px;
-    height: 100%;
-    }
-#cancel{
-    background-color: gray;
-   
 }
 
-.form-group .control-label{
+.back_form {
+    margin: 15px;
+    height: 100%;
+}
+
+#cancel {
+    background-color: gray;
+}
+
+.form-group .control-label {
     padding-left: 15px;
     text-align: left;
 }
+
 button {
     color: white;
     background-color: #32463f;
 }
+
 .red {
     color: red;
 }
+
 .box1 {
     height: 70px;
     overflow-y: scroll;
     padding-left: 20px;
 }
+
 hr {
     margin: 0px;
 }
+
 form img {
     width: 150px;
     margin: 20px;
     float: left;
 }
+
 button {
     color: white;
     background-color: #32463f;
 }
+
 .color.btn.btn-banner {
     border-color: rgba(255, 255, 255, 0.6);
     transition-duration: 0.55s;
 }
+
 .color.btn.btn-banner:hover {
     border-color: rgba(255, 255, 255, 0);
     background-color: #141c19;
     font-weight: 400px;
     color: white;
 }
+
 .form-group .input-group .input-group-addon {
     border: 1px solid gray;
     background-color: lightgray;

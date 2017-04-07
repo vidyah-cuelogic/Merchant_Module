@@ -89,7 +89,6 @@ def dashboard(request):
 
 @login_required(login_url='/app1/login_view/')
 def products(request):
-    # return render(request,"app1/products.html",{})
     user=User.objects.get(username=request.user)
     products=Products.objects.filter(merchant=user)
     product_category=Product_Category.objects.all()

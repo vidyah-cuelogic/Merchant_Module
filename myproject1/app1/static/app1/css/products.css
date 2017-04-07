@@ -7,14 +7,18 @@
     font-size: 15px;
     margin-left: 10px;
 }
-.pagination>.active>a{
-    background-color:#809A95;
-    border-color: #809A95; 
+
+.pagination>.active>a {
+    background-color: #809A95;
+    border-color: #809A95;
 }
-.pagination>.active>a:hover,.pagination>.active>a:focus{
-    background-color:#809A95;
-    border-color: #809A95; 
+
+.pagination>.active>a:hover,
+.pagination>.active>a:focus {
+    background-color: #809A95;
+    border-color: #809A95;
 }
+
 .glyphicon-remove-sign,
 .glyphicon-trash,
 .glyphicon-edit {
