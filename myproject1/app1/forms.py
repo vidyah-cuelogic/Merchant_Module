@@ -33,10 +33,10 @@ class ProductForm(forms.Form):
     product_details=forms.CharField(label='Product Details',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
     product_cost=forms.DecimalField(label='Product cost',widget=forms.TextInput(attrs={'class':'form-control'}))
     material_details=forms.CharField(label='Material Details',widget=forms.Textarea(attrs={'rows':4,'class':'form-control'}))
-    quantity=forms.IntegerField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control'}))
+    quantity=forms.IntegerField(label='Quantity',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
     deliver_charges=forms.DecimalField(label='Delivery Charges',widget=forms.TextInput(attrs={'class':'form-control'}))
     return_allowed = forms.TypedChoiceField(
                      choices=YESNO_CHOICES, widget=forms.RadioSelect, coerce=int
                 )
-    return_within=forms.CharField(label='Return Within',widget=forms.NumberInput(attrs={'class':'form-control', 'value':0}),required=False)
+    return_within=forms.CharField(required=False,label='Return Within',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
     

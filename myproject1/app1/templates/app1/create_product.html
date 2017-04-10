@@ -151,9 +151,7 @@
                             <div class="col-md-7">
                                 {{form.deliver_charges}}
                             </div>
-                            <div class="col-xs-1">
                                 <b>INR</b>
-                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">
@@ -162,9 +160,7 @@
                             <div class="col-md-7">
                                 {{form.product_cost}}
                             </div>
-                            <div class="col-xs-1">
                                 <b>INR</b>
-                            </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">
@@ -206,7 +202,7 @@
                                 <label class="radio-inline">
                                     <input type="radio" name="return_allowed" value=0 required=0>no
                                 </label>
-                            </div>
+                            </div>                            
                         </div>
                         <div class="form-group" id="show-me">
                             <label class="col-md-4 control-label">
@@ -214,9 +210,10 @@
                                     *
                                 </label>
                                 {{ form.return_within.label_tag }}</label>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 {{form.return_within}}
                             </div>
+                                <b>Days</b>
                         </div>
                     </div>
                     <div class="row bottom_right">
