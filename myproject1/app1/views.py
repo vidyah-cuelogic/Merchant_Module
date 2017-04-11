@@ -22,13 +22,15 @@ from app1.forms import SignupForm,LoginForm,ProductForm
 def home(request):
     return render(request,"app1/home.html",{})
 
-def login_view(request):    
+def login_view(request):
+    
     username = password = ''
     if request.method == 'GET':
             form = LoginForm()
             return render(request,"app1/login.html",{'form':form})
     if request.method == 'POST':
         form = LoginForm(request.POST)
+        
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
@@ -37,11 +39,12 @@ def login_view(request):
                 login(request, user)
                 return HttpResponseRedirect('/app1/dashboard/')
         else:  
-                messages.success(request, ' Invalid user')
-                return render(request,"app1/login.html",{'form':form})
-    
+                messages.error(request, ' Invalid user')
+                return HttpResponseRedirect('/app1/login_view/')     
 
 def register(request):
+        import pdb;
+        pdb.set_trace()
         if request.method == 'POST':
             form = SignupForm(request.POST)            
             if form.is_valid()  :
@@ -57,10 +60,9 @@ def register(request):
                 to_list=[user.email,settings.EMAIL_HOST_USER]
                 send_mail(subject,'please click on following link to verify your email address: http://'+settings.HOST+'/app1/login_firsttime/?uid=%s'%(hash1),from_email,to_list,fail_silently=True)
                 messages.success(request, ' verification link has been sent to your email address')
-                form = LoginForm(request.POST)
-                return render(request,'app1/login.html',{'form':form})
+                return HttpResponseRedirect('/app1/login_view/')  
             else:
-                return render(request,"app1/register.html",{'form':form})
+                return HttpResponseRedirect('/app1/register/')
         else:
             form = SignupForm()
         return render(request, 'app1/register.html', {
@@ -73,14 +75,15 @@ def login_firsttime(request):
         email_obj=emailverify.objects.get(activation_key=hash1)
     else:
         raise ValueError('Wrong hashkey')
-    time_date=email_obj.registration_time  
+    time_date=email_obj.registration_time
+    
     if time_date < (datetime.now() - timedelta(hours=24)):
-        raise ValidationError('Verification link has been expired')
-    form = LoginForm()
-    username=User.objects.get(id=email_obj.username.id)
-    username.is_active=True
-    username.save()
-    messages.success(request, "you have verified your email")
+        messages.success(request,'Verification link has been expired')
+    else:
+        username=User.objects.get(id=email_obj.username.id)
+        username.is_active=True
+        username.save()
+        messages.success(request, "you have verified your email")
     return HttpResponseRedirect('/app1/login_view/')
 
 @login_required(login_url='/app1/login_view/')
@@ -102,13 +105,18 @@ def create_product(request):
         form=ProductForm()
         categories=Categories.objects.all()
         offers=Offers.objects.all()
+        print ("")
         return render(request,"app1/create_product.html",{'form':form,'categories':categories,'offers':offers})
     if request.method == 'POST':
         data=request.POST;
-        print(data['return_allowed'])
+        print(data)
+        print(data['return_allowed'])       
+        
         user=User.objects.get(username=request.user)        
         if Products.objects.filter(product_name=data['product_name']).count()>0:
-            return HttpResponse(json.dumps({"success":False, "message":"This product already exists, try another product name"})) 
+            response = {'status': 'success', 'message': 'This product already exists, try another product name'}            
+            return HttpResponse(json.dumps(response), content_type='application/json')
+            # return HttpResponse(json.dumps({"success":False, "message":"This product already exists, try another product name"})) 
 
         a=Products(merchant=user,product_name=data['product_name'],quantity=data['quantity'],product_cost=data['product_cost'] ,deliver_charges=data['deliver_charges'] ,return_allowed=bool(int(data['return_allowed'])),return_within=data['return_within'],product_speficication=data['product_details'],material_speficication=data['material_details'])
         a.save()
@@ -123,8 +131,11 @@ def create_product(request):
             off=Offers.objects.get(offer_title=data['offer'])
             d=Product_offer(product_id=a,offer_id=off)
             d.save()   
-        
+            response = {'status': 'success', 'message': 'Data inserted into database successfully'}            
+            return HttpResponse(json.dumps(response), content_type='application/json')
+    response = {'status': 'success', 'message': 'Data could not be inserted'}            
+    return HttpResponse(json.dumps(response), content_type='application/json')      
 
-        return HttpResponse(json.dumps({"success":True, "message":"Data inserted into database successfully"}))            
-    return HttpResponse(json.dumps({"success":False, "message":"Data could not be inserted"}))
-     
+    #     return HttpResponse(json.dumps({"success":True, "message":"Data inserted into database successfully"}))            
+    # return HttpResponse(json.dumps({"success":False, "message":"Data could not be inserted"}))
+    #  

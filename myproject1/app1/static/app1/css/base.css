@@ -116,10 +116,9 @@ span .glyphicon-info-sign {
     font-size: 15px;
 }
 
-.down .btn .btn-default {
+.down.btn.btn-default{
     font-size: 15px;
 }
-
 .down.btn.btn-banner:hover {
     border-color: rgba(255, 255, 255, 0);
     background-color: #141c19;

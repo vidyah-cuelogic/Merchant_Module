@@ -11,11 +11,6 @@ $(function() {
             $('#colors_list').append('<div class="color-tab">' + '<span style="background-color:' + template1 + '; height:16px; width:16px; display:inline-block; margin-right:5px"></span>' + template1 + '</div>');
 
             console.log("ID: " + id + " has been changed to " + newValue);
-
-
-            console.log(color_mapping);
-
-
             $('#selected_colors').append('<option value=' + template1 + '>' + template1 + '</option>');
         }
     });
@@ -26,16 +21,16 @@ $(function() {
 
 
 });
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip()
+});
 
-
-console.log(colors);
 
 $("#myform").submit(function(e) {
-    console.log(colors);
     e.preventDefault();
     formdata = new FormData(this);
-    selected_cat = $('#first').val();
     formdata.append('color_list', JSON.stringify(colors));
+    
     $.ajax({
         type: "POST",
         url: '/app1/dashboard/products/create_product/',

@@ -165,7 +165,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {%if products|length > 0 %} {% for product in products %}
+                                {%if products|length > 0 %} 
+                                {% for product in products %}
                                 <tr>
                                     <td>
                                         <input type="checkbox" value="" />
@@ -176,14 +177,20 @@
                                     {%endif%} {%endfor%}
                                     <td>{{product.uploaded_on}}</td>
                                     <td>{{product.quantity}}</td>
-                                    <td><span class="glyphicon glyphicon-ok-sign"></span></td>
                                     <td>
+                                        <span class="glyphicon glyphicon-ok-sign"></span>
+                                    </td>
+                                    <td>
+                                    
                                         <a href="#">
                                             <span class="glyphicon glyphicon-edit"></span></a>
                                         <a href="#"> <span class="glyphicon glyphicon-trash"></span></a>
+                                    
                                     </td>
                                 </tr>
-                                {% endfor %} {%endif%} {%if products|length == 0 %}
+                                {% endfor %} 
+                                {%endif%} 
+                                {%if products|length == 0 %}
                                 <tr>
                                     <td colspan="7">
                                         <div class="text-center">No records found</div>

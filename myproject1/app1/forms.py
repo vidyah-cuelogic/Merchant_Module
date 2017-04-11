@@ -38,5 +38,5 @@ class ProductForm(forms.Form):
     return_allowed = forms.TypedChoiceField(
                      choices=YESNO_CHOICES, widget=forms.RadioSelect, coerce=int
                 )
-    return_within=forms.CharField(required=False,label='Return Within',widget=forms.NumberInput(attrs={'class':'form-control','min':0}))
+    return_within=forms.CharField(required=False,label='Return Within',widget=forms.NumberInput(attrs={'class':'form-control','min':0,'value':0}))
     

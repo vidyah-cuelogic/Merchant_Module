@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
-
+import sys
 import os
 EMAIL_USE_TLS=True
 EMAIL_HOST="smtp.gmail.com"
@@ -96,7 +96,8 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+if 'test' in sys.argv:
+    CAPTCHA_TEST_MODE = True 
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

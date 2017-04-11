@@ -90,9 +90,7 @@ class emailverify(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
     activation_key = models.CharField(max_length=50)
     registration_time= models.DateTimeField(default=datetime.now, blank=True)
-    def is_registered_recently(self):
-         cur_time = timezone.now()
-         return cur_time - datetime.timedelta(days=1) <= self.pub_date <= cur_time
+    
     def __str__(self):
         return str(self.username) 
     
