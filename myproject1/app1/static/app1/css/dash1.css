@@ -1,0 +1,44 @@
+@media(min-width:768px) {
+    .panel span {
+        padding-top: 10%;
+        padding-left: 40%;
+    }
+    .panel p {
+        font-size: 20px;
+        padding-left: 30%;
+    }
+}
+
+@media(max-width:768px) {
+    .panel span {
+        padding-left: 10%;
+    }
+    .panel p {
+        font-size: 10px;
+        padding-left: 10%;
+    }
+}
+
+.first {
+    background-color: lightblue;
+}
+
+.second {
+    background-color: lightpink;
+}
+
+.third {
+    background-color: lightgreen;
+}
+
+.fourth {
+    background-color: lightgray;
+}
+
+.panel .glyphicon {
+    font-size: 30px;
+}
+
+.panel .panel-content {
+    padding: 10px;
+}
